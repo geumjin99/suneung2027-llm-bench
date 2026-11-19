@@ -19,5 +19,10 @@ for m in "$@"; do
   until ready "$m"; do sleep 30; done
   echo "=== $m $(date +%T)"
   python run_eval.py "$m" "$ITEMS" ../out/raw --n 3 || echo "FAILED $m"
+  # DELETE_AFTER="repo1 repo2": free disk once every item file has a result for this model
+  if [[ " ${DELETE_AFTER:-} " == *" $m "* ]]; then
+    ok=1; for f in ${ITEMS//,/ }; do [ -f "../out/raw/${m//\//__}__$(basename "$f")" ] || ok=0; done
+    [ $ok = 1 ] && rm -rf "$HUB/models--${m//\//--}" && echo "deleted cache $m"
+  fi
 done
 echo QUEUE_DONE
