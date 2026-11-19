@@ -12,7 +12,7 @@ kanana-2-3B,kor-common-10,2,4,4|1|4,2.0,152
 kanana-2-3B,kor-common-11,2,2,1|3|2,1.0,244
 kanana-2-3B,kor-common-12,3,5,3|4|3,0.0,278
 kanana-2-3B,kor-common-13,2,3,1|1|3,1.0,132
-kanana-2-3B,kor-common-14,2,1,5|5|2,0.0,191
+kanana-2-3B,kor-common-14,2,1,5|None|2,0.2,191
 kanana-2-3B,kor-common-15,2,3,3|3|2,2.0,237
 kanana-2-3B,kor-common-16,2,5,5|5|5,3.0,163
 kanana-2-3B,kor-common-17,3,3,1|3|3,2.0,204
@@ -54,7 +54,7 @@ kanana-2-3B,kor-eonmae-41,2,2,2|2|2,3.0,83
 kanana-2-3B,kor-eonmae-42,2,1,1|1|1,3.0,156
 kanana-2-3B,kor-eonmae-43,2,5,5|5|5,3.0,80
 kanana-2-3B,kor-eonmae-44,2,3,5|3|5,1.0,156
-kanana-2-3B,kor-eonmae-45,3,4,1|5|1,0.0,256
+kanana-2-3B,kor-eonmae-45,3,4,1|5|None,0.5,256
 kanana-2-3B,math-common-01,2,2,2|2|2,3.0,241
 kanana-2-3B,math-common-02,2,5,5|5|5,3.0,436
 kanana-2-3B,math-common-03,3,3,3|3|3,3.0,257
@@ -183,15 +183,15 @@ Gemma-4-E4B,kor-common-33,2,4,1|4|1,1.0,1706
 Gemma-4-E4B,kor-common-34,3,4,4|4|4,3.0,2096
 Gemma-4-E4B,kor-hwajak-35,2,1,4|1|1,2.0,1810
 Gemma-4-E4B,kor-hwajak-36,2,5,3|5|3,1.0,2428
-Gemma-4-E4B,kor-hwajak-37,2,5,3|None|3,0.2,2023
+Gemma-4-E4B,kor-hwajak-37,2,5,3|None|3,0.3333333333333333,2023
 Gemma-4-E4B,kor-hwajak-38,2,3,1|1|3,1.0,1632
 Gemma-4-E4B,kor-hwajak-39,2,3,3|5|5,1.0,2015
 Gemma-4-E4B,kor-hwajak-40,3,5,2|5|5,2.0,2221
 Gemma-4-E4B,kor-hwajak-41,2,1,1|1|1,3.0,2196
 Gemma-4-E4B,kor-hwajak-42,2,3,4|1|1,0.0,2493
-Gemma-4-E4B,kor-hwajak-43,2,4,None|5|5,0.2,3473
+Gemma-4-E4B,kor-hwajak-43,2,4,None|None|None,1.1666666666666665,3473
 Gemma-4-E4B,kor-hwajak-44,2,2,2|2|2,3.0,1444
-Gemma-4-E4B,kor-hwajak-45,3,4,4|4|None,2.2,2658
+Gemma-4-E4B,kor-hwajak-45,3,4,4|4|None,2.5,2658
 Gemma-4-E4B,kor-eonmae-35,2,5,3|4|3,0.0,2495
 Gemma-4-E4B,kor-eonmae-36,3,2,4|3|2,1.0,4742
 Gemma-4-E4B,kor-eonmae-37,2,5,1|1|1,0.0,3083
@@ -653,7 +653,7 @@ Gemma-4-12B,kor-hwajak-39,2,3,1|None|1,0.2,11162
 Gemma-4-12B,kor-hwajak-40,3,5,5|2|None,1.2,10423
 Gemma-4-12B,kor-hwajak-41,2,1,1|1|1,3.0,3164
 Gemma-4-12B,kor-hwajak-42,2,3,3|3|3,3.0,3726
-Gemma-4-12B,kor-hwajak-43,2,4,4|4|4,3.0,5521
+Gemma-4-12B,kor-hwajak-43,2,4,4|4|None,2.5,5521
 Gemma-4-12B,kor-hwajak-44,2,2,2|2|2,3.0,4153
 Gemma-4-12B,kor-hwajak-45,3,4,4|4|4,3.0,6242
 Gemma-4-12B,kor-eonmae-35,2,5,None|None|5,1.4,14260
