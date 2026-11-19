@@ -451,7 +451,7 @@ kanana-1.5-8B,kor-hwajak-41,2,1,4|1|1,2.0,260
 kanana-1.5-8B,kor-hwajak-42,2,3,1|1|1,0.0,335
 kanana-1.5-8B,kor-hwajak-43,2,4,2|4|1,1.0,497
 kanana-1.5-8B,kor-hwajak-44,2,2,3|4|4,0.0,297
-kanana-1.5-8B,kor-hwajak-45,3,4,4|5|4,2.0,731
+kanana-1.5-8B,kor-hwajak-45,3,4,4|None|4,2.0,731
 kanana-1.5-8B,kor-eonmae-35,2,5,2|2|1,0.0,527
 kanana-1.5-8B,kor-eonmae-36,3,2,1|3|3,0.0,764
 kanana-1.5-8B,kor-eonmae-37,2,5,2|2|2,0.0,559
@@ -481,17 +481,17 @@ kanana-1.5-8B,math-common-15,4,3,3|2|2,1.0,1413
 kanana-1.5-8B,math-common-16,3,2,2|2|2,3.0,226
 kanana-1.5-8B,math-common-17,3,20,20|20|20,3.0,285
 kanana-1.5-8B,math-common-18,3,5,5|5|5,3.0,296
-kanana-1.5-8B,math-common-19,3,31,7125|119|31,1.0,1061
+kanana-1.5-8B,math-common-19,3,31,None|119|31,1.0,1061
 kanana-1.5-8B,math-common-20,4,169,60|24|400,0.0,1359
-kanana-1.5-8B,math-common-21,4,135,110|3125|0,0.0,1276
-kanana-1.5-8B,math-common-22,4,98,173|4|4,0.0,1209
+kanana-1.5-8B,math-common-21,4,135,110|None|0,0.0,1276
+kanana-1.5-8B,math-common-22,4,98,173|4|None,0.0,1209
 kanana-1.5-8B,math-prob-23,2,3,3|3|3,3.0,250
 kanana-1.5-8B,math-prob-24,3,2,2|2|2,3.0,436
 kanana-1.5-8B,math-prob-25,3,5,5|1|5,2.0,452
 kanana-1.5-8B,math-prob-26,3,5,3|5|2,1.0,772
 kanana-1.5-8B,math-prob-27,3,1,3|3|3,0.0,886
 kanana-1.5-8B,math-prob-28,4,3,4|2|5,0.0,696
-kanana-1.5-8B,math-prob-29,4,41,None|0|2,0.0,1129
+kanana-1.5-8B,math-prob-29,4,41,2|0|2,0.0,1129
 kanana-1.5-8B,math-prob-30,4,15,9|6|0,0.0,1003
 kanana-1.5-8B,math-calc-23,2,1,1|1|1,3.0,255
 kanana-1.5-8B,math-calc-24,3,4,4|4|5,2.0,833
@@ -530,7 +530,7 @@ Gemma-4-E2B,math-common-18,3,5,5|5|5,3.0,1314
 Gemma-4-E2B,math-common-19,3,31,31|31|31,3.0,2306
 Gemma-4-E2B,math-common-20,4,169,169|169|169,3.0,4933
 Gemma-4-E2B,math-common-21,4,135,110|110|2,0.0,5180
-Gemma-4-E2B,math-common-22,4,98,98|1253|10,1.0,7541
+Gemma-4-E2B,math-common-22,4,98,98|None|10,1.0,7541
 Gemma-4-E2B,math-prob-23,2,3,3|3|3,3.0,820
 Gemma-4-E2B,math-prob-24,3,2,2|2|2,3.0,1195
 Gemma-4-E2B,math-prob-25,3,5,5|5|5,3.0,1322
@@ -575,7 +575,7 @@ Gemma-4-E2B,kor-common-17,3,3,3|3|3,3.0,1920
 Gemma-4-E2B,kor-common-18,2,2,3|5|2,1.0,1683
 Gemma-4-E2B,kor-common-19,2,1,1|1|1,3.0,1594
 Gemma-4-E2B,kor-common-20,2,5,5|5|2,2.0,1903
-Gemma-4-E2B,kor-common-21,3,4,2|5|1,0.0,2676
+Gemma-4-E2B,kor-common-21,3,4,2|None|1,0.2,2676
 Gemma-4-E2B,kor-common-22,2,1,5|5|1,1.0,1477
 Gemma-4-E2B,kor-common-23,3,4,4|4|2,2.0,2107
 Gemma-4-E2B,kor-common-24,2,5,3|3|3,0.0,1353
@@ -589,17 +589,17 @@ Gemma-4-E2B,kor-common-31,2,1,1|4|4,1.0,1583
 Gemma-4-E2B,kor-common-32,2,2,2|2|2,3.0,1577
 Gemma-4-E2B,kor-common-33,2,4,4|5|4,2.0,1661
 Gemma-4-E2B,kor-common-34,3,4,4|4|4,3.0,2398
-Gemma-4-E2B,kor-hwajak-35,2,1,3|3|3,0.0,2540
+Gemma-4-E2B,kor-hwajak-35,2,1,3|None|3,0.0,2540
 Gemma-4-E2B,kor-hwajak-36,2,5,5|3|5,2.0,2260
-Gemma-4-E2B,kor-hwajak-37,2,5,3|3|3,0.0,2591
+Gemma-4-E2B,kor-hwajak-37,2,5,None|None|None,0.6666666666666666,2591
 Gemma-4-E2B,kor-hwajak-38,2,3,3|3|3,3.0,1471
 Gemma-4-E2B,kor-hwajak-39,2,3,2|5|5,0.0,2392
 Gemma-4-E2B,kor-hwajak-40,3,5,5|5|1,2.0,2337
 Gemma-4-E2B,kor-hwajak-41,2,1,1|1|3,2.0,1432
 Gemma-4-E2B,kor-hwajak-42,2,3,2|3|3,2.0,1915
-Gemma-4-E2B,kor-hwajak-43,2,4,4|5|4,2.0,3058
-Gemma-4-E2B,kor-hwajak-44,2,2,3|4|5,0.0,3437
-Gemma-4-E2B,kor-hwajak-45,3,4,5|4|1,1.0,2404
+Gemma-4-E2B,kor-hwajak-43,2,4,4|5|None,1.3333333333333333,3058
+Gemma-4-E2B,kor-hwajak-44,2,2,None|None|None,1.3333333333333333,3437
+Gemma-4-E2B,kor-hwajak-45,3,4,5|None|1,0.5,2404
 Gemma-4-E2B,kor-eonmae-35,2,5,1|4|3,0.0,2136
 Gemma-4-E2B,kor-eonmae-36,3,2,5|4|3,0.0,3515
 Gemma-4-E2B,kor-eonmae-37,2,5,3|2|2,0.0,2503
@@ -610,7 +610,7 @@ Gemma-4-E2B,kor-eonmae-41,2,2,4|1|2,1.0,1660
 Gemma-4-E2B,kor-eonmae-42,2,1,5|5|1,1.0,1542
 Gemma-4-E2B,kor-eonmae-43,2,5,5|5|5,3.0,1566
 Gemma-4-E2B,kor-eonmae-44,2,3,3|5|5,1.0,2711
-Gemma-4-E2B,kor-eonmae-45,3,4,1|1|5,0.0,1865
+Gemma-4-E2B,kor-eonmae-45,3,4,None|1|5,0.0,1865
 Gemma-4-12B,kor-common-01,2,1,1|1|1,3.0,1069
 Gemma-4-12B,kor-common-02,2,4,4|4|4,3.0,1049
 Gemma-4-12B,kor-common-03,3,3,3|3|3,3.0,1737
@@ -740,16 +740,16 @@ EXAONE-4.0-1.2B,math-prob-24,3,2,2|2|2,3.0,1965
 EXAONE-4.0-1.2B,math-prob-25,3,5,5|5|5,3.0,1999
 EXAONE-4.0-1.2B,math-prob-26,3,5,5|5|5,3.0,7346
 EXAONE-4.0-1.2B,math-prob-27,3,1,1|1|1,3.0,3185
-EXAONE-4.0-1.2B,math-prob-28,4,3,None|None|None,0.6000000000000001,15932
+EXAONE-4.0-1.2B,math-prob-28,4,3,4|None|None,0.4,15932
 EXAONE-4.0-1.2B,math-prob-29,4,41,41|41|None,2.0,5388
 EXAONE-4.0-1.2B,math-prob-30,4,15,9|32|None,0.0,14200
 EXAONE-4.0-1.2B,math-calc-23,2,1,1|1|1,3.0,1328
 EXAONE-4.0-1.2B,math-calc-24,3,4,4|4|4,3.0,2761
 EXAONE-4.0-1.2B,math-calc-25,3,1,1|1|1,3.0,7379
-EXAONE-4.0-1.2B,math-calc-26,3,5,None|5|None,1.4,13342
+EXAONE-4.0-1.2B,math-calc-26,3,5,None|5|5,2.2,13342
 EXAONE-4.0-1.2B,math-calc-27,3,3,3|4|3,2.0,5645
 EXAONE-4.0-1.2B,math-calc-28,4,4,1|1|None,0.2,14329
-EXAONE-4.0-1.2B,math-calc-29,4,12,None|7|23,0.0,13546
+EXAONE-4.0-1.2B,math-calc-29,4,12,24|7|23,0.0,13546
 EXAONE-4.0-1.2B,math-calc-30,4,75,0|None|None,0.0,15177
 EXAONE-4.0-1.2B,math-geom-23,2,3,3|3|3,3.0,757
 EXAONE-4.0-1.2B,math-geom-24,3,4,1|1|None,0.2,12156
@@ -820,7 +820,7 @@ Qwen3.5-4B,kor-common-02,2,4,4|4|4,3.0,1725
 Qwen3.5-4B,kor-common-03,3,3,3|3|3,3.0,6009
 Qwen3.5-4B,kor-common-04,2,2,2|2|2,3.0,4617
 Qwen3.5-4B,kor-common-05,2,3,3|3|3,3.0,8296
-Qwen3.5-4B,kor-common-06,2,5,5|1|1,1.0,13681
+Qwen3.5-4B,kor-common-06,2,5,None|1|1,0.2,13681
 Qwen3.5-4B,kor-common-07,2,3,3|3|3,3.0,5858
 Qwen3.5-4B,kor-common-08,3,2,2|2|2,3.0,5917
 Qwen3.5-4B,kor-common-09,2,1,3|5|1,1.0,11911
@@ -859,10 +859,10 @@ Qwen3.5-4B,kor-hwajak-41,2,1,1|1|1,3.0,5525
 Qwen3.5-4B,kor-hwajak-42,2,3,1|3|3,2.0,11000
 Qwen3.5-4B,kor-hwajak-43,2,4,4|4|4,3.0,3167
 Qwen3.5-4B,kor-hwajak-44,2,2,2|2|2,3.0,5671
-Qwen3.5-4B,kor-hwajak-45,3,4,4|4|4,3.0,11171
+Qwen3.5-4B,kor-hwajak-45,3,4,4|None|4,2.5,11171
 Qwen3.5-4B,kor-eonmae-35,2,5,3|2|5,1.0,13138
 Qwen3.5-4B,kor-eonmae-36,3,2,None|2|4,1.2,14303
-Qwen3.5-4B,kor-eonmae-37,2,5,2|None|2,0.2,12492
+Qwen3.5-4B,kor-eonmae-37,2,5,2|None|None,0.4,12492
 Qwen3.5-4B,kor-eonmae-38,2,3,3|4|3,2.0,11809
 Qwen3.5-4B,kor-eonmae-39,2,4,5|5|5,0.0,10800
 Qwen3.5-4B,kor-eonmae-40,2,1,1|1|1,3.0,8221
@@ -891,7 +891,7 @@ Qwen3.5-4B,math-common-17,3,20,20|20|20,3.0,2024
 Qwen3.5-4B,math-common-18,3,5,5|5|5,3.0,2631
 Qwen3.5-4B,math-common-19,3,31,31|31|31,3.0,5028
 Qwen3.5-4B,math-common-20,4,169,169|169|169,3.0,10906
-Qwen3.5-4B,math-common-21,4,135,None|None|244,0.0,16384
+Qwen3.5-4B,math-common-21,4,135,None|None|248,0.0,16384
 Qwen3.5-4B,math-common-22,4,98,98|98|98,3.0,11556
 Qwen3.5-4B,math-prob-23,2,3,3|3|3,3.0,1557
 Qwen3.5-4B,math-prob-24,3,2,2|2|2,3.0,1774
@@ -907,7 +907,7 @@ Qwen3.5-4B,math-calc-25,3,1,1|1|1,3.0,6197
 Qwen3.5-4B,math-calc-26,3,5,5|5|5,3.0,5687
 Qwen3.5-4B,math-calc-27,3,3,3|3|3,3.0,13169
 Qwen3.5-4B,math-calc-28,4,4,4|4|4,3.0,12139
-Qwen3.5-4B,math-calc-29,4,12,None|None|None,0.0,16384
+Qwen3.5-4B,math-calc-29,4,12,None|5|7,0.0,16384
 Qwen3.5-4B,math-calc-30,4,75,None|None|None,0.0,16384
 Qwen3.5-4B,math-geom-23,2,3,3|3|3,3.0,1341
 Qwen3.5-4B,math-geom-24,3,4,2|4|4,2.0,3176
@@ -1122,26 +1122,26 @@ Qwen3.5-2B,kor-eonmae-43,2,5,2|5|None,1.2,15426
 Qwen3.5-2B,kor-eonmae-44,2,3,3|None|3,2.2,10906
 Qwen3.5-2B,kor-eonmae-45,3,4,1|1|1,0.0,10957
 HyperCLOVAX-SEED 0.5B,math-common-01,2,2,2|None|1,1.2,2948
-HyperCLOVAX-SEED 0.5B,math-common-02,2,5,None|4|None,0.4,426
-HyperCLOVAX-SEED 0.5B,math-common-03,3,3,None|3|4,1.2,166
+HyperCLOVAX-SEED 0.5B,math-common-02,2,5,None|4|2,0.2,426
+HyperCLOVAX-SEED 0.5B,math-common-03,3,3,None|3|4,1.0,166
 HyperCLOVAX-SEED 0.5B,math-common-04,3,4,None|None|None,0.6000000000000001,2732
 HyperCLOVAX-SEED 0.5B,math-common-05,3,1,None|None|None,0.6000000000000001,338
 HyperCLOVAX-SEED 0.5B,math-common-06,3,1,None|None|3,0.4,3144
 HyperCLOVAX-SEED 0.5B,math-common-07,3,2,None|1|None,0.4,376
 HyperCLOVAX-SEED 0.5B,math-common-08,3,3,5|1|None,0.2,3010
-HyperCLOVAX-SEED 0.5B,math-common-09,4,4,None|None|None,0.6000000000000001,352
+HyperCLOVAX-SEED 0.5B,math-common-09,4,4,None|None|2,0.4,352
 HyperCLOVAX-SEED 0.5B,math-common-10,4,2,2|3|2,2.0,305
-HyperCLOVAX-SEED 0.5B,math-common-11,4,5,None|2|5,1.2,385
-HyperCLOVAX-SEED 0.5B,math-common-12,4,3,None|None|None,0.6000000000000001,406
+HyperCLOVAX-SEED 0.5B,math-common-11,4,5,1|2|5,1.0,385
+HyperCLOVAX-SEED 0.5B,math-common-12,4,3,3|None|None,1.4,406
 HyperCLOVAX-SEED 0.5B,math-common-13,4,2,None|5|5,0.2,570
 HyperCLOVAX-SEED 0.5B,math-common-14,4,4,None|2|None,0.4,845
 HyperCLOVAX-SEED 0.5B,math-common-15,4,3,None|None|None,0.6000000000000001,3140
-HyperCLOVAX-SEED 0.5B,math-common-16,3,2,5|None|None,0.0,176
+HyperCLOVAX-SEED 0.5B,math-common-16,3,2,5|None|2,1.0,176
 HyperCLOVAX-SEED 0.5B,math-common-17,3,20,12|20|21,1.0,363
-HyperCLOVAX-SEED 0.5B,math-common-18,3,5,330|10|None,0.0,510
+HyperCLOVAX-SEED 0.5B,math-common-18,3,5,330|3|None,0.0,510
 HyperCLOVAX-SEED 0.5B,math-common-19,3,31,3|None|None,0.0,2837
-HyperCLOVAX-SEED 0.5B,math-common-20,4,169,None|None|-9,0.0,642
-HyperCLOVAX-SEED 0.5B,math-common-21,4,135,1560|199|None,0.0,513
+HyperCLOVAX-SEED 0.5B,math-common-20,4,169,None|None|None,0.0,642
+HyperCLOVAX-SEED 0.5B,math-common-21,4,135,None|None|125,0.0,513
 HyperCLOVAX-SEED 0.5B,math-common-22,4,98,None|10|None,0.0,554
 HyperCLOVAX-SEED 0.5B,math-prob-23,2,3,5|None|2,0.2,519
 HyperCLOVAX-SEED 0.5B,math-prob-24,3,2,None|None|2,1.4,196
@@ -1149,77 +1149,77 @@ HyperCLOVAX-SEED 0.5B,math-prob-25,3,5,None|None|None,0.6000000000000001,280
 HyperCLOVAX-SEED 0.5B,math-prob-26,3,5,3|2|None,0.2,383
 HyperCLOVAX-SEED 0.5B,math-prob-27,3,1,3|None|5,0.2,308
 HyperCLOVAX-SEED 0.5B,math-prob-28,4,3,None|None|None,0.6000000000000001,642
-HyperCLOVAX-SEED 0.5B,math-prob-29,4,41,4|None|None,0.0,569
-HyperCLOVAX-SEED 0.5B,math-prob-30,4,15,None|None|79,0.0,2953
+HyperCLOVAX-SEED 0.5B,math-prob-29,4,41,4|21|167,0.0,569
+HyperCLOVAX-SEED 0.5B,math-prob-30,4,15,223|None|79,0.0,2953
 HyperCLOVAX-SEED 0.5B,math-calc-23,2,1,None|1|1,2.2,2789
 HyperCLOVAX-SEED 0.5B,math-calc-24,3,4,4|2|None,1.2,398
 HyperCLOVAX-SEED 0.5B,math-calc-25,3,1,1|3|None,1.2,447
 HyperCLOVAX-SEED 0.5B,math-calc-26,3,5,2|5|2,1.0,788
 HyperCLOVAX-SEED 0.5B,math-calc-27,3,3,None|None|4,0.4,3050
 HyperCLOVAX-SEED 0.5B,math-calc-28,4,4,None|None|4,1.4,2697
-HyperCLOVAX-SEED 0.5B,math-calc-29,4,12,None|2001|7,0.0,799
-HyperCLOVAX-SEED 0.5B,math-calc-30,4,75,None|None|None,0.0,1230
+HyperCLOVAX-SEED 0.5B,math-calc-29,4,12,None|None|7,0.0,799
+HyperCLOVAX-SEED 0.5B,math-calc-30,4,75,90|999|180,0.0,1230
 HyperCLOVAX-SEED 0.5B,math-geom-23,2,3,None|3|None,1.4,1777
-HyperCLOVAX-SEED 0.5B,math-geom-24,3,4,None|None|None,0.6000000000000001,421
-HyperCLOVAX-SEED 0.5B,math-geom-25,3,3,None|None|None,0.6000000000000001,437
-HyperCLOVAX-SEED 0.5B,math-geom-26,3,5,None|None|None,0.6000000000000001,3363
+HyperCLOVAX-SEED 0.5B,math-geom-24,3,4,None|None|4,1.4,421
+HyperCLOVAX-SEED 0.5B,math-geom-25,3,3,5|None|None,0.4,437
+HyperCLOVAX-SEED 0.5B,math-geom-26,3,5,None|1|None,0.4,3363
 HyperCLOVAX-SEED 0.5B,math-geom-27,3,1,5|4|None,0.2,712
 HyperCLOVAX-SEED 0.5B,math-geom-28,4,4,None|None|5,0.4,647
-HyperCLOVAX-SEED 0.5B,math-geom-29,4,45,99|None|8,0.0,507
+HyperCLOVAX-SEED 0.5B,math-geom-29,4,45,99|999|None,0.0,507
 HyperCLOVAX-SEED 0.5B,math-geom-30,4,223,None|None|340,0.0,2937
 HyperCLOVAX-SEED 0.5B,kor-common-01,2,1,None|4|2,0.2,315
-HyperCLOVAX-SEED 0.5B,kor-common-02,2,4,None|4|2,1.2,486
+HyperCLOVAX-SEED 0.5B,kor-common-02,2,4,None|4|None,1.5333333333333332,486
 HyperCLOVAX-SEED 0.5B,kor-common-03,3,3,None|4|2,0.2,317
 HyperCLOVAX-SEED 0.5B,kor-common-04,2,2,5|None|None,0.4,3680
 HyperCLOVAX-SEED 0.5B,kor-common-05,2,3,None|3|4,1.2,2215
 HyperCLOVAX-SEED 0.5B,kor-common-06,2,5,5|3|None,1.2,2081
 HyperCLOVAX-SEED 0.5B,kor-common-07,2,3,None|3|4,1.2,1918
 HyperCLOVAX-SEED 0.5B,kor-common-08,3,2,5|3|4,0.0,414
-HyperCLOVAX-SEED 0.5B,kor-common-09,2,1,1|3|4,1.0,459
-HyperCLOVAX-SEED 0.5B,kor-common-10,2,4,None|None|2,0.4,4417
+HyperCLOVAX-SEED 0.5B,kor-common-09,2,1,5|3|4,0.0,459
+HyperCLOVAX-SEED 0.5B,kor-common-10,2,4,None|None|None,0.6000000000000001,4417
 HyperCLOVAX-SEED 0.5B,kor-common-11,2,2,5|4|None,0.2,742
-HyperCLOVAX-SEED 0.5B,kor-common-12,3,5,5|4|5,2.0,737
+HyperCLOVAX-SEED 0.5B,kor-common-12,3,5,5|None|None,1.4,737
 HyperCLOVAX-SEED 0.5B,kor-common-13,2,3,5|None|None,0.4,2463
 HyperCLOVAX-SEED 0.5B,kor-common-14,2,1,None|4|None,0.4,403
 HyperCLOVAX-SEED 0.5B,kor-common-15,2,3,None|4|None,0.4,1354
-HyperCLOVAX-SEED 0.5B,kor-common-16,2,5,4|None|None,0.4,889
+HyperCLOVAX-SEED 0.5B,kor-common-16,2,5,None|None|None,0.6000000000000001,889
 HyperCLOVAX-SEED 0.5B,kor-common-17,3,3,None|None|None,0.6000000000000001,245
 HyperCLOVAX-SEED 0.5B,kor-common-18,2,2,5|3|None,0.2,356
 HyperCLOVAX-SEED 0.5B,kor-common-19,2,1,5|3|None,0.2,252
-HyperCLOVAX-SEED 0.5B,kor-common-20,2,5,5|5|1,2.0,371
+HyperCLOVAX-SEED 0.5B,kor-common-20,2,5,5|2|1,1.0,371
 HyperCLOVAX-SEED 0.5B,kor-common-21,3,4,5|None|1,0.2,560
 HyperCLOVAX-SEED 0.5B,kor-common-22,2,1,None|None|None,0.6000000000000001,495
 HyperCLOVAX-SEED 0.5B,kor-common-23,3,4,None|None|None,0.6000000000000001,2152
 HyperCLOVAX-SEED 0.5B,kor-common-24,2,5,4|None|2,0.2,2147
-HyperCLOVAX-SEED 0.5B,kor-common-25,2,3,1|None|None,0.4,360
-HyperCLOVAX-SEED 0.5B,kor-common-26,2,5,None|None|5,1.4,209
+HyperCLOVAX-SEED 0.5B,kor-common-25,2,3,None|None|4,0.4,360
+HyperCLOVAX-SEED 0.5B,kor-common-26,2,5,None|None|None,0.6000000000000001,209
 HyperCLOVAX-SEED 0.5B,kor-common-27,2,2,5|None|4,0.2,251
 HyperCLOVAX-SEED 0.5B,kor-common-28,2,5,4|None|4,0.2,2309
-HyperCLOVAX-SEED 0.5B,kor-common-29,2,4,4|3|None,1.2,443
+HyperCLOVAX-SEED 0.5B,kor-common-29,2,4,2|3|1,0.0,443
 HyperCLOVAX-SEED 0.5B,kor-common-30,3,2,None|None|4,0.4,176
-HyperCLOVAX-SEED 0.5B,kor-common-31,2,1,5|None|None,0.4,2514
-HyperCLOVAX-SEED 0.5B,kor-common-32,2,2,1|None|None,0.4,365
-HyperCLOVAX-SEED 0.5B,kor-common-33,2,4,None|None|None,0.6000000000000001,395
-HyperCLOVAX-SEED 0.5B,kor-common-34,3,4,None|None|None,0.6000000000000001,201
+HyperCLOVAX-SEED 0.5B,kor-common-31,2,1,None|None|None,0.9,2514
+HyperCLOVAX-SEED 0.5B,kor-common-32,2,2,1|3|None,0.2,365
+HyperCLOVAX-SEED 0.5B,kor-common-33,2,4,3|None|None,0.4,395
+HyperCLOVAX-SEED 0.5B,kor-common-34,3,4,None|4|None,1.4,201
 HyperCLOVAX-SEED 0.5B,kor-hwajak-35,2,1,3|None|None,0.4,2275
 HyperCLOVAX-SEED 0.5B,kor-hwajak-36,2,5,3|5|3,1.0,357
 HyperCLOVAX-SEED 0.5B,kor-hwajak-37,2,5,None|5|4,1.2,207
-HyperCLOVAX-SEED 0.5B,kor-hwajak-38,2,3,1|None|4,0.2,2074
+HyperCLOVAX-SEED 0.5B,kor-hwajak-38,2,3,5|None|None,0.4,2074
 HyperCLOVAX-SEED 0.5B,kor-hwajak-39,2,3,2|None|None,0.4,408
 HyperCLOVAX-SEED 0.5B,kor-hwajak-40,3,5,2|None|None,0.4,3631
-HyperCLOVAX-SEED 0.5B,kor-hwajak-41,2,1,2|2|4,0.0,440
-HyperCLOVAX-SEED 0.5B,kor-hwajak-42,2,3,None|5|None,0.4,209
+HyperCLOVAX-SEED 0.5B,kor-hwajak-41,2,1,2|None|4,0.2,440
+HyperCLOVAX-SEED 0.5B,kor-hwajak-42,2,3,None|None|None,0.6000000000000001,209
 HyperCLOVAX-SEED 0.5B,kor-hwajak-43,2,4,None|None|None,0.6000000000000001,353
 HyperCLOVAX-SEED 0.5B,kor-hwajak-44,2,2,5|None|None,0.4,316
 HyperCLOVAX-SEED 0.5B,kor-hwajak-45,3,4,5|None|None,0.4,106
 HyperCLOVAX-SEED 0.5B,kor-eonmae-35,2,5,None|3|3,0.2,316
-HyperCLOVAX-SEED 0.5B,kor-eonmae-36,3,2,None|3|None,0.4,405
+HyperCLOVAX-SEED 0.5B,kor-eonmae-36,3,2,None|3|5,0.2,405
 HyperCLOVAX-SEED 0.5B,kor-eonmae-37,2,5,None|None|None,0.6000000000000001,267
-HyperCLOVAX-SEED 0.5B,kor-eonmae-38,2,3,1|5|5,0.0,2544
-HyperCLOVAX-SEED 0.5B,kor-eonmae-39,2,4,3|5|None,0.2,428
-HyperCLOVAX-SEED 0.5B,kor-eonmae-40,2,1,None|5|None,0.4,498
-HyperCLOVAX-SEED 0.5B,kor-eonmae-41,2,2,4|1|2,1.0,390
+HyperCLOVAX-SEED 0.5B,kor-eonmae-38,2,3,None|5|5,0.2,2544
+HyperCLOVAX-SEED 0.5B,kor-eonmae-39,2,4,3|None|None,0.4,428
+HyperCLOVAX-SEED 0.5B,kor-eonmae-40,2,1,4|5|None,0.2,498
+HyperCLOVAX-SEED 0.5B,kor-eonmae-41,2,2,4|None|2,1.2,390
 HyperCLOVAX-SEED 0.5B,kor-eonmae-42,2,1,2|None|None,0.4,287
-HyperCLOVAX-SEED 0.5B,kor-eonmae-43,2,5,None|None|1,0.4,262
+HyperCLOVAX-SEED 0.5B,kor-eonmae-43,2,5,None|4|1,0.5,262
 HyperCLOVAX-SEED 0.5B,kor-eonmae-44,2,3,None|None|None,0.6000000000000001,146
-HyperCLOVAX-SEED 0.5B,kor-eonmae-45,3,4,5|5|4,1.0,350
+HyperCLOVAX-SEED 0.5B,kor-eonmae-45,3,4,5|None|4,1.2,350
