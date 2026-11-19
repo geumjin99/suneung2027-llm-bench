@@ -250,7 +250,7 @@ T = {
         "label": lambda l: l,
         "diag": "{s} 정제 후 / 형식 엄수 / 형식 위반 / 잘림 / 평균 토큰", "subj": ("국어", "수학", "영어"),
         "unsolved": "**모든 모델이 3회 모두 틀린 문항**: ", "all_solved": "**모든 모델이 3회 모두 맞힌 문항**: ",
-        "dev_hdr": ["기기 등급", "대략적인 기기 사양", "4비트 가중치 크기", "해당 모델", "이 등급 최고 점수 (국어 / 수학)"],
+        "dev_hdr": ["기기 등급", "대략적인 기기 사양", "4비트 가중치 크기", "해당 모델", "이 등급 최고 점수 (국어 / 수학 / 영어)"],
         "tier": {"보급형 스마트폰": "보급형 스마트폰", "중급 스마트폰": "중급 스마트폰", "플래그십 스마트폰": "플래그십 스마트폰", "노트북·태블릿": "노트북·태블릿"},
         "spec": {"보급형 스마트폰": "RAM 4–6GB", "중급 스마트폰": "RAM 8GB", "플래그십 스마트폰": "RAM 12–16GB", "노트북·태블릿": "RAM 16GB 이상"},
         "rng": {"보급형 스마트폰": "≤1.5GB", "중급 스마트폰": "1.5–3.2GB", "플래그십 스마트폰": "3.2–6GB", "노트북·태블릿": "6GB 이상"},
@@ -300,8 +300,9 @@ def write_readme(rows, present, figs, acc_figs=(), tables=None):
             ms = [r for r in rows if device_tier(r["hf_id"]) == label]
             kv = [x for x in (_best_in(r, K_LABELS) for r in ms) if x is not None]
             mv = [x for x in (_best_in(r, M_LABELS) for r in ms) if x is not None]
+            ev = [x for x in (_best_in(r, ["영어"]) for r in ms) if x is not None]
             dev.append(f"| {L['tier'][label]} | {L['spec'][label]} | {L['rng'][label]} | {', '.join(r['model'] for r in ms) or '–'} | "
-                       f"{f'{max(kv):.0f}' if kv else '–'} / {f'{max(mv):.0f}' if mv else '–'} |")
+                       f"{f'{max(kv):.0f}' if kv else '–'} / {f'{max(mv):.0f}' if mv else '–'} / {f'{max(ev):.0f}' if ev else '–'} |")
         out = (tpl.replace("{{ACC_FIGURES}}", accmd).replace("{{DEVICE_TABLE}}", "\n".join(dev))
                .replace("{{SCORES_TABLE}}", "\n".join(lines)).replace("{{DIAG_TABLE}}", "\n".join(diag))
                .replace("{{FIGURES}}", figmd).replace("{{UPDATED}}", stamp).replace("{{N_MODELS}}", str(len(rows)))
@@ -364,16 +365,24 @@ def summary(rows):
         mv = [x for x in (_best_in(r, M_LABELS) for r in ms) if x is not None]
         if not (kv or mv):
             continue
+        ev = [x for x in (_best_in(r, ["영어"]) for r in ms) if x is not None]
         parts = []
         if kv: parts.append(f"국어 최고 {max(kv):.0f}점")
         if mv: parts.append(f"수학 최고 {max(mv):.0f}점")
+        if ev: parts.append(f"영어 최고 {max(ev):.0f}점")
         tiers.append(f"{label}급 모델은 " + "·".join(parts))
     if tiers:
         out.append("- **기기별로 보면** " + ", ".join(tiers) + "이다. (아래 표 참고, 메모리 기준 추정)")
+    e90 = sorted([r for r in rows if (_best_in(r, ["영어"]) or 0) >= 90], key=lambda r: r["params_B"] or 0)
+    if e90:
+        r0 = e90[0]
+        out.append(f"- **영어**는 절대평가라 90점 이상이면 1등급이다. {device_tier(r0['hf_id'])}에서 돌아가는 {r0['params_B']:g}B 모델"
+                   f"({r0['model']}, {r0['영어']:.0f}점)부터 1등급 점수가 나왔고, 1등급 점수를 받은 모델은 모두 {len(e90)}개다. "
+                   "단, 듣기는 음성 대신 대본을 읽고 풀었다.")
     small = [r for r in rows if (r["params_B"] or 0) <= 1.0 and "korean_acc" in r]
     if small:
         acc = statistics.mean(statistics.mean(r[f"{s}_acc"] for s in ("korean", "math", "english") if f"{s}_acc" in r) for r in small)
-        out.append(f"- **1B 이하 모델**은 평균 정답률이 {acc * 100:.0f}%로, 5지선다를 무작위로 찍었을 때(20%)와 비슷하거나 조금 나은 수준이다. "
+        out.append(f"- **1B 이하 모델**은 평균 정답률이 {acc * 100:.0f}%로, 5지선다를 무작위로 찍었을 때(20%)보다 조금 나은 수준이다. "
                    "생각을 끝내지 못하고 길이 제한에 걸리거나, 답을 정해진 형식으로 쓰지 못하는 경우가 많았다.")
     reach = sorted([r for r in rows if (_best_in(r, M_LABELS) or 0) >= 80], key=lambda r: r["params_B"] or 0)
     if reach:
