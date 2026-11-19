@@ -1,0 +1,11 @@
+# exam content is copyrighted by KICE: never commit question text, transcriptions or raw model outputs
+data/
+raw/
+results/raw/
+eval/img/
+eval/out/
+*.pdf
+*.png
+!figures/*.png
+__pycache__/
+eval/items/
