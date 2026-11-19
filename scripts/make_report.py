@@ -233,6 +233,7 @@ def main():
         fig.tight_layout(); p = os.path.join(FIG, f"heatmap_{subj}.png"); fig.savefig(p, dpi=160); plt.close(fig)
         figs.append((f"{title}: 문항별 정답률", f"figures/heatmap_{subj}.png"))
 
+    hero(rows)
     import accuracy_figs
     acc_figs, tables = accuracy_figs.make(res, rows, FIG, COLORS) if rows else ([], {})
     write_readme(rows, present, figs, acc_figs, tables)
@@ -308,6 +309,37 @@ def write_readme(rows, present, figs, acc_figs=(), tables=None):
         open(os.path.join(ROOT, L["out"]), "w").write(out)
 
 
+
+def hero(rows):
+    """Headline chart: best score reachable on each device class."""
+    import numpy as np
+    tiers = [label for _, label in DEVICE_TIERS]
+    subj = [("국어", K_LABELS, "#4C72B0"), ("수학", M_LABELS, "#DD8452"), ("영어", ["영어"], "#55A868")]
+    subj = [x for x in subj if any(_best_in(r, x[1]) is not None for r in rows)]
+    fig, ax = plt.subplots(figsize=(9, 4.6))
+    w = 0.8 / max(1, len(subj))
+    for j, (name, labels, col) in enumerate(subj):
+        for i, t in enumerate(tiers):
+            ms = [r for r in rows if device_tier(r["hf_id"]) == t and _best_in(r, labels) is not None]
+            if not ms:
+                continue
+            v, r = max(((_best_in(r, labels), r) for r in ms), key=lambda x: x[0])
+            x = i + (j - (len(subj) - 1) / 2) * w
+            ax.bar(x, v, w * 0.92, color=col, label=name if i == 0 or not ax.get_legend_handles_labels()[1].count(name) else None)
+            ax.text(x, v + 1.5, f"{v:.0f}", ha="center", fontsize=11, fontweight="bold")
+            ax.text(x, 3, r["model"].replace("HyperCLOVAX-SEED ", "HCX "), ha="center", va="bottom", rotation=90, fontsize=7, color="white")
+    h, l = ax.get_legend_handles_labels()
+    seen = {}
+    for hh, ll in zip(h, l):
+        seen.setdefault(ll, hh)
+    ax.legend(seen.values(), seen.keys(), frameon=False, ncol=3, loc="upper left")
+    ax.set_xticks(range(len(tiers)))
+    ax.set_xticklabels([f"{t}\n({ {'보급형 스마트폰': 'RAM 4–6GB', '중급 스마트폰': 'RAM 8GB', '플래그십 스마트폰': 'RAM 12–16GB', '노트북·태블릿': 'RAM 16GB+'}[t]})" for t in tiers])
+    ax.set_ylim(0, 105); ax.set_ylabel("최고 원점수 (100점 만점)")
+    ax.set_title("인터넷 없이 기기에서 돌아가는 AI의 2027 수능 최고 점수", fontsize=13, fontweight="bold")
+    fig.tight_layout(); fig.savefig(os.path.join(FIG, "hero.png"), dpi=170); plt.close(fig)
+
+
 RES = {}
 
 
@@ -366,8 +398,10 @@ def summary(rows):
     if kr:
         def f(v):
             return f"{v:.0f}" if v is not None else "–"
-        out.append("- **국산 모델**: " + ", ".join(
-            f"{r['model']}(국어 {f(_avg_in(r, K_LABELS))}점, 수학 {f(_avg_in(r, M_LABELS))}점)" for r in kr) + ".")
+        def desc(r):
+            parts = [f"{n} {_avg_in(r, ls):.0f}점" for n, ls in (("국어", K_LABELS), ("수학", M_LABELS), ("영어", ["영어"])) if _avg_in(r, ls) is not None]
+            return f"{r['model']}(" + ", ".join(parts) + ")"
+        out.append("- **국산 모델**: " + ", ".join(desc(r) for r in kr) + ".")
     return "\n".join(out) if out else "- 평가가 진행 중이다."
 
 
