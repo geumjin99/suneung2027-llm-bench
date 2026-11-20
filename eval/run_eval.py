@@ -22,7 +22,7 @@ def build_prompt(it):
         head = f"다음은 수학 영역 문항입니다.\n\n{q}\n\n"
         return head + tail
     # korean / english: shared context block containing the passage and the question
-    subj = {"korean": "국어", "english": "영어"}[it["subject"]]
+    subj = it.get("area") or {"korean": "국어", "english": "영어"}[it["subject"]]
     return (f"다음은 {subj} 영역 문제지의 일부입니다.\n\n{it['context']}\n\n"
             f"위 자료를 바탕으로 {it['number']}번 문항에 답하세요. "
             "풀이 과정을 간단히 쓴 뒤, 마지막 줄에 반드시 '정답: X' 형식으로 답을 적으세요. X는 ①, ②, ③, ④, ⑤ 중 하나입니다.")

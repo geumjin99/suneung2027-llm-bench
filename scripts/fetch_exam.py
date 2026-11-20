@@ -1,10 +1,11 @@
 """Download 2027 CSAT question papers and answer keys from KICE's exam-day CDN."""
 import os, urllib.request
 BASE = "https://cdn.kice.re.kr/27dae-suneung/"
-FILES = [  # 1=Korean, 2=Math, 3=English, 31=English listening script; 'a' suffix = answer key
+FILES = [  # 1=Korean, 2=Math, 3=English, 31=English listening script, 41=Korean history, 42_n=social studies; 'a' suffix = answer key
     "27DaeSuneung_1.pdf", "27DaeSuneung_1a.pdf", "27DaeSuneung_2.pdf", "27DaeSuneung_2a.pdf",
     "27DaeSuneung_3.pdf", "27DaeSuneung_3a.pdf", "27DaeSuneung_31.pdf",
-]
+    "27DaeSuneung_41.pdf", "27DaeSuneung_41a.pdf",  # Korean history
+] + [f"27DaeSuneung_42_{i}{s}.pdf" for i in range(1, 10) for s in ("", "a")]  # social studies 1-9
 out = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "pdf")
 os.makedirs(out, exist_ok=True)
 for f in FILES:

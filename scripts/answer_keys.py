@@ -39,6 +39,16 @@ def english_key(pdf="data/pdf/27DaeSuneung_3a.pdf"):
     return key
 
 
+def single_key(pdf, n=20):
+    """Answer key with one section of n items (Korean history, each social studies subject)."""
+    key = {}
+    for toks in _rows(pdf):
+        for q, a, p in toks:
+            key[q] = (a, p)
+    assert len(key) == n and sum(p for _, p in key.values()) == 50, (pdf, len(key))
+    return key
+
+
 if __name__ == "__main__":
     k = math_key()
     for s, v in k.items():

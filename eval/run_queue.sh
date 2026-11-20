@@ -2,7 +2,7 @@
 # Run a list of models sequentially on one GPU, waiting for each model's download to finish.
 # Usage: bash run_queue.sh <items.json[,items2.json]> <model> [<model> ...]
 ITEMS=$1; shift
-HUB=~/.cache/huggingface/hub
+HUB=${HF_HUB_CACHE:-$HOME/.cache/huggingface/hub}
 ready() {  # snapshot exists, no partial blobs, every shard named in the index is present
   local d=$HUB/models--${1//\//--}
   [ -d "$d/snapshots" ] || return 1
