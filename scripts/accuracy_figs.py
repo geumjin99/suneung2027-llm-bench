@@ -33,11 +33,13 @@ def _english_bucket(r):
     return "영어·듣기(1–17)" if r["number"] <= 17 else "영어·읽기(18–45)"
 
 
-BUCKET = {"korean": _korean_bucket, "math": _math_bucket, "english": _english_bucket}
+SOCIAL = {"ethics": "생활과 윤리", "thought": "윤리와 사상", "economics": "경제", "politics": "정치와 법", "society": "사회·문화"}
+BUCKET = {"korean": _korean_bucket, "math": _math_bucket, "english": _english_bucket,
+          "history": lambda r: "한국사", "social": lambda r: "사탐·" + SOCIAL[r["section"]]}
 BUCKET_ORDER = ["국어·독서(1–17)", "국어·문학(18–34)", "국어·화법과 작문", "국어·언어와 매체",
                 "수학·공통 5지선다", "수학·공통 단답형", "수학·확률과 통계", "수학·미적분", "수학·기하",
-                "영어·듣기(1–17)", "영어·읽기(18–45)"]
-SUBJ_CN = {"korean": "국어", "math": "수학", "english": "영어"}
+                "영어·듣기(1–17)", "영어·읽기(18–45)", "한국사"] + ["사탐·" + v for v in SOCIAL.values()]
+SUBJ_CN = {"korean": "국어", "math": "수학", "english": "영어", "history": "한국사", "social": "사회탐구"}
 
 
 def _acc(recs):
@@ -89,7 +91,7 @@ def make(res, rows, fig_dir, colors):
 
     # ---------- 2. accuracy vs params, one line per subject ----------
     fig, ax = plt.subplots(figsize=(7, 4.4))
-    for s, mk in (("korean", "o"), ("math", "s"), ("english", "^")):
+    for s, mk in (("korean", "o"), ("math", "s"), ("english", "^"), ("history", "D"), ("social", "v")):
         pts = [(r["params_B"], _acc(res[r["hf_id"]][s]["records"]), r) for r in rows
                if s in res[r["hf_id"]] and r["params_B"]]
         if not pts:
@@ -109,7 +111,7 @@ def make(res, rows, fig_dir, colors):
     figs.append(("모델 크기 vs 정답률", _save(fig, fig_dir, "acc_vs_params.png")))
 
     # ---------- 3. accuracy by point value (difficulty proxy) ----------
-    subs = [s for s in ("korean", "math", "english") if any(s in res[r["hf_id"]] for r in rows)]
+    subs = [s for s in ("korean", "math", "english", "history", "social") if any(s in res[r["hf_id"]] for r in rows)]
     if subs:
         fig, axes = plt.subplots(1, len(subs), figsize=(4.2 * len(subs), 3.8), sharey=True, squeeze=False)
         cmap = plt.get_cmap("viridis")

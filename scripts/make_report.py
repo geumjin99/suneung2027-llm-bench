@@ -57,14 +57,23 @@ def device_tier(hf_id):
     return next(label for lim, label in DEVICE_TIERS if gb <= lim)
 
 
-COLORS = {"Alibaba": "#4C72B0", "Google": "#55A868", "LG AI연구원": "#C44E52", "카카오": "#DD8452", "네이버": "#8172B3"}
+COLORS = {"Alibaba": "#4C72B0", "Google": "#55A868", "LG AI연구원": "#C44E52", "카카오": "#DD8452", "네이버": "#8172B3",
+          "KT": "#937860", "SKT": "#DA8BC3"}
 
 # subject -> list of (score name, sections included)
 EXAMS = {
     "korean": [("국어(화작)", ("common", "hwajak")), ("국어(언매)", ("common", "eonmae"))],
     "math": [("수학(확통)", ("common", "prob")), ("수학(미적)", ("common", "calc")), ("수학(기하)", ("common", "geom"))],
     "english": [("영어", ("all",))],
+    "history": [("한국사", ("history",))],
+    "social": [("생활과 윤리", ("ethics",)), ("윤리와 사상", ("thought",)), ("경제", ("economics",)),
+               ("정치와 법", ("politics",)), ("사회·문화", ("society",))],
 }
+SOCIAL_LABELS = [l for l, _ in EXAMS["social"]]
+FIFTY = ["한국사"] + SOCIAL_LABELS  # 50-point papers
+SUBJECTS = (("korean", "국어"), ("math", "수학"), ("english", "영어"), ("history", "한국사"), ("social", "사회탐구"))
+SHORT = {"common-": "", "hwajak-": "화", "eonmae-": "언", "prob-": "확", "calc-": "미", "geom-": "기", "all-": "",
+         "ethics-": "생윤", "thought-": "윤사", "economics-": "경제", "politics-": "정법", "society-": "사문", "history-": ""}
 
 
 def _plain_ticks(ax):
@@ -135,6 +144,8 @@ def main():
             for label, secs in EXAMS[subj]:
                 if subj == "english":
                     secs = tuple({r["section"] for r in d["records"]})
+                if not any(r["section"] in secs for r in d["records"]):
+                    continue
                 mean, (lo, hi), maj, full = exam_scores(d, secs)
                 row[label] = round(mean, 1)
                 row[label + "_range"] = f"{lo}–{hi}"
@@ -183,23 +194,27 @@ def main():
 
     figs = []
     # 1) grouped bar of exam scores
-    if rows and present:
+    pal = ["#4C72B0", "#8DA0CB", "#55A868", "#9BCB8F", "#C7E9C0", "#DD8452", "#C44E52", "#8172B3"]
+    for labs, full, fname, title in (([l for l in present if l not in FIFTY], 100, "scores_by_model.png", "국어·수학·영어 원점수"),
+                                     ([l for l in present if l in FIFTY], 50, "scores_tamgu.png", "한국사·사회탐구 원점수")):
+        if not (rows and labs):
+            continue
         fig, ax = plt.subplots(figsize=(max(8, 1.1 * len(rows) + 2), 4.6))
-        width = 0.8 / len(present)
-        pal = ["#4C72B0", "#8DA0CB", "#55A868", "#9BCB8F", "#C7E9C0", "#DD8452"]
-        for j, l in enumerate(present):
-            xs = [i + (j - (len(present) - 1) / 2) * width for i in range(len(rows))]
+        width = 0.8 / len(labs)
+        for j, l in enumerate(labs):
+            xs = [i + (j - (len(labs) - 1) / 2) * width for i in range(len(rows))]
             ys = [r.get(l, 0) or 0 for r in rows]
             ax.bar(xs, ys, width, label=l, color=pal[j % len(pal)])
         ax.set_xticks(range(len(rows))); ax.set_xticklabels([r["model"] for r in rows], rotation=30, ha="right")
-        ax.set_ylabel("원점수 (100점 만점, 3회 평균)"); ax.set_ylim(0, 100)
-        ax.set_title("2027학년도 수능 — 소형 모델 원점수")
-        ax.legend(ncol=min(6, len(present)), fontsize=8, frameon=False, loc="upper left")
-        fig.tight_layout(); p = os.path.join(FIG, "scores_by_model.png"); fig.savefig(p, dpi=160); plt.close(fig)
-        figs.append(("영역별 원점수", "figures/scores_by_model.png"))
+        ax.set_ylabel(f"원점수 ({full}점 만점, 3회 평균)"); ax.set_ylim(0, full)
+        ax.set_title(f"2027학년도 수능 — {title}")
+        ax.legend(ncol=min(6, len(labs)), fontsize=8, frameon=False, loc="upper left")
+        fig.tight_layout(); p = os.path.join(FIG, fname); fig.savefig(p, dpi=160); plt.close(fig)
+        figs.append((title, f"figures/{fname}"))
 
     # 2) score vs params scatter per subject (best elective)
-    for subj, title in (("korean", "국어"), ("math", "수학"), ("english", "영어")):
+    for subj, title in SUBJECTS:
+        full = 50 if subj in ("history", "social") else 100
         pts = []
         for r in rows:
             cand = [r[l] for l, _ in EXAMS[subj] if l in r]
@@ -212,18 +227,18 @@ def main():
             ax.scatter(x, y, s=60, color=COLORS.get(dv, "gray"), zorder=3)
             ax.annotate(n, (x, y), textcoords="offset points", xytext=(5, 4), fontsize=8)
         ax.set_xscale("log"); _plain_ticks(ax); ax.set_xlabel("매개변수 수 (B, 로그 축)"); ax.set_ylabel("원점수 (선택과목 평균)")
-        ax.set_ylim(0, 100); ax.set_title(f"{title}: 모델 크기 vs 점수"); ax.grid(alpha=.3)
+        ax.set_ylim(0, full); ax.set_title(f"{title}: 모델 크기 vs 점수"); ax.grid(alpha=.3)
         handles = [plt.Line2D([], [], marker="o", ls="", color=c, label=k) for k, c in COLORS.items()]
         ax.legend(handles=handles, fontsize=8, frameon=False)
         fig.tight_layout(); p = os.path.join(FIG, f"scaling_{subj}.png"); fig.savefig(p, dpi=160); plt.close(fig)
         figs.append((f"{title}: 크기 vs 점수", f"figures/scaling_{subj}.png"))
 
     # 3) per-question heatmap (fraction correct over samples)
-    for subj, title in (("korean", "국어"), ("math", "수학"), ("english", "영어")):
+    for subj, title in SUBJECTS:
         ms = [r for r in rows if subj in res[r["hf_id"]]]
         if not ms:
             continue
-        items = [x["id"] for x in res[ms[0]["hf_id"]][subj]["records"]]
+        items = list(dict.fromkeys(x["id"] for r in ms for x in res[r["hf_id"]][subj]["records"]))
         mat = []
         for r in ms:
             byid = {x["id"]: x for x in res[r["hf_id"]][subj]["records"]}
@@ -231,8 +246,13 @@ def main():
         fig, ax = plt.subplots(figsize=(max(8, 0.17 * len(items) + 2), 0.38 * len(ms) + 1.6))
         im = ax.imshow(mat, aspect="auto", cmap="Greens", vmin=0, vmax=1)
         ax.set_yticks(range(len(ms))); ax.set_yticklabels([r["model"] for r in ms], fontsize=8)
-        short = [re.sub(r"^[a-z]+-", "", i).replace("common-", "").replace("hwajak-", "화").replace("eonmae-", "언")
-                 .replace("prob-", "확").replace("calc-", "미").replace("geom-", "기").replace("all-", "") for i in items]
+        def _short(i):
+            i = re.sub(r"^(kor|math|eng)-", "", i)
+            for k, v in SHORT.items():
+                if i.startswith(k):
+                    return v + i[len(k):]
+            return i
+        short = [_short(i) for i in items]
         ax.set_xticks(range(len(items))); ax.set_xticklabels(short, fontsize=6, rotation=90)
         ax.set_title(f"{title}: 문항별 정답률 (3회 중)"); fig.colorbar(im, ax=ax, fraction=0.02)
         fig.tight_layout(); p = os.path.join(FIG, f"heatmap_{subj}.png"); fig.savefig(p, dpi=160); plt.close(fig)
@@ -252,14 +272,14 @@ T = {
     "ko": {
         "tpl": "README.template.md", "out": "README.md",
         "cols": ["모델", "개발사", "매개변수(B)", "실행 가능 기기"],
-        "label": lambda l: l,
-        "diag": "{s} 정제 후 / 형식 엄수 / 형식 위반 / 잘림 / 평균 토큰", "subj": ("국어", "수학", "영어"),
+        "label": lambda l: f"{l} <sub>(50점)</sub>" if l in FIFTY else l,
+        "diag": "{s} 정제 후 / 형식 엄수 / 형식 위반 / 잘림 / 평균 토큰", "subj": ("국어", "수학", "영어", "한국사", "사회탐구"),
         "unsolved": "**모든 모델이 3회 모두 틀린 문항**: ", "all_solved": "**모든 모델이 3회 모두 맞힌 문항**: ",
-        "dev_hdr": ["기기 등급", "대략적인 기기 사양", "4비트 가중치 크기", "해당 모델", "이 등급 최고 점수 (국어 / 수학 / 영어)"],
+        "dev_hdr": ["기기 등급", "대략적인 기기 사양", "4비트 가중치 크기", "해당 모델", "이 등급 최고 점수 (국어 / 수학 / 영어 / 한국사<sub>50점</sub>)"],
         "tier": {"보급형 스마트폰": "보급형 스마트폰", "중급 스마트폰": "중급 스마트폰", "플래그십 스마트폰": "플래그십 스마트폰", "노트북·태블릿": "노트북·태블릿"},
         "spec": {"보급형 스마트폰": "RAM 4–6GB", "중급 스마트폰": "RAM 8GB", "플래그십 스마트폰": "RAM 12–16GB", "노트북·태블릿": "RAM 16GB 이상"},
         "rng": {"보급형 스마트폰": "≤1.5GB", "중급 스마트폰": "1.5–3.2GB", "플래그십 스마트폰": "3.2–6GB", "노트북·태블릿": "6GB 이상"},
-        "dev": {"네이버": "네이버", "LG AI연구원": "LG AI연구원", "카카오": "카카오", "Alibaba": "알리바바", "Google": "구글"},
+        "dev": {"네이버": "네이버", "LG AI연구원": "LG AI연구원", "카카오": "카카오", "Alibaba": "알리바바", "Google": "구글", "KT": "KT", "SKT": "SKT"},
     },
 }
 
@@ -286,10 +306,11 @@ def write_readme(rows, present, figs, acc_figs=(), tables=None):
             cells = [f"{r[l]:.1f} <sub>({r[l + '_range']})</sub>" if l in r else "—" for l in present]
             lines.append(f"| {r['model']} | {L['dev'].get(r['developer'], r['developer'])} | {r['params_B']} | "
                          f"{L['tier'].get(device_tier(r['hf_id']), '–')} | " + " | ".join(cells) + " |")
-        diag = ["| " + L["cols"][0] + " | " + " | ".join(L["diag"].format(s=s) for s in L["subj"]) + " |", "|---|---|---|---|"]
+        diag = ["| " + L["cols"][0] + " | " + " | ".join(L["diag"].format(s=s) for s in L["subj"]) + " |",
+                "|---|" + "---|" * len(L["subj"])]
         for r in rows:
             c = [f"{r[s + '_acc']:.2f} / {r[s + '_strict_acc']:.2f} / {r[s + '_noanswer']:.2f} / {r[s + '_trunc']:.2f} / {r[s + '_avg_tokens']}"
-                 if s + "_acc" in r else "—" for s in ("korean", "math", "english")]
+                 if s + "_acc" in r else "—" for s, _ in SUBJECTS]
             diag.append(f"| {r['model']} | " + " | ".join(c) + " |")
         figmd = "\n\n".join(f"**{t}**\n\n![{t}]({p})" for t, p in figs)
         accmd = "\n\n".join(f"**{t}**\n\n![{t}]({p})" for t, p in acc_figs)
@@ -306,8 +327,10 @@ def write_readme(rows, present, figs, acc_figs=(), tables=None):
             kv = [x for x in (_best_in(r, K_LABELS) for r in ms) if x is not None]
             mv = [x for x in (_best_in(r, M_LABELS) for r in ms) if x is not None]
             ev = [x for x in (_best_in(r, ["영어"]) for r in ms) if x is not None]
+            hv = [x for x in (_best_in(r, ["한국사"]) for r in ms) if x is not None]
+            fm = lambda v: f"{max(v):.0f}" if v else "–"
             dev.append(f"| {L['tier'][label]} | {L['spec'][label]} | {L['rng'][label]} | {', '.join(r['model'] for r in ms) or '–'} | "
-                       f"{f'{max(kv):.0f}' if kv else '–'} / {f'{max(mv):.0f}' if mv else '–'} / {f'{max(ev):.0f}' if ev else '–'} |")
+                       f"{fm(kv)} / {fm(mv)} / {fm(ev)} / {fm(hv)} |")
         out = (tpl.replace("{{ACC_FIGURES}}", accmd).replace("{{DEVICE_TABLE}}", "\n".join(dev))
                .replace("{{SCORES_TABLE}}", "\n".join(lines)).replace("{{DIAG_TABLE}}", "\n".join(diag))
                .replace("{{FIGURES}}", figmd).replace("{{UPDATED}}", stamp).replace("{{N_MODELS}}", str(len(rows)))
@@ -384,6 +407,21 @@ def summary(rows):
         out.append(f"- **영어**는 절대평가라 90점 이상이면 1등급이다. {device_tier(r0['hf_id'])}에서 돌아가는 {r0['params_B']:g}B 모델"
                    f"({r0['model']}, {r0['영어']:.0f}점)부터 1등급 점수가 나왔고, 1등급 점수를 받은 모델은 모두 {len(e90)}개다. "
                    "단, 듣기는 음성 대신 대본을 읽고 풀었다.")
+    h40 = sorted([r for r in rows if (r.get("한국사") or 0) >= 40], key=lambda r: r["params_B"] or 0)
+    hb = best(["한국사"])
+    if hb:
+        txt = f"- **한국사**(50점 만점)는 40점 이상이면 1등급이다. 최고 점수는 {hb[1]['model']}의 {hb[0]:.0f}점이다."
+        if h40:
+            r0 = h40[0]
+            txt += (f" {device_tier(r0['hf_id'])}에서 돌아가는 {r0['params_B']:g}B 모델({r0['model']}, {r0['한국사']:.0f}점)부터 "
+                    f"1등급 점수가 나왔고, 1등급 점수를 받은 모델은 모두 {len(h40)}개다.")
+        else:
+            txt += " 1등급 점수를 받은 모델은 없다."
+        out.append(txt)
+    sb = [(l, best([l])) for l in SOCIAL_LABELS if best([l])]
+    if sb:
+        out.append("- **사회탐구**(과목당 50점 만점) 과목별 최고 점수는 " +
+                   ", ".join(f"{l} {v[0]:.0f}점({v[1]['model']})" for l, v in sb) + "이다. 도표·그래프는 글로 옮겨 제시했다.")
     small = [r for r in rows if (r["params_B"] or 0) <= 1.0 and "korean_acc" in r]
     if small:
         acc = statistics.mean(statistics.mean(r[f"{s}_acc"] for s in ("korean", "math", "english") if f"{s}_acc" in r) for r in small)
@@ -408,12 +446,13 @@ def summary(rows):
         if gap > 0.03:
             out.append(f"- **국어가 수학보다 어렵다.** 2B 이상 모델 기준으로 국어 정답률이 수학보다 평균 {gap * 100:.0f}%p 낮다. "
                        "2,000–4,000자 길이의 지문을 읽고 선택지 사이의 미묘한 차이를 가려내는 일이 작은 모델에게는 계산보다 어렵다.")
-    kr = [r for r in rows if r["developer"] in ("네이버", "LG AI연구원", "카카오")]
+    kr = [r for r in rows if r["developer"] in ("네이버", "LG AI연구원", "카카오", "KT", "SKT")]
     if kr:
         def f(v):
             return f"{v:.0f}" if v is not None else "–"
         def desc(r):
-            parts = [f"{n} {_avg_in(r, ls):.0f}점" for n, ls in (("국어", K_LABELS), ("수학", M_LABELS), ("영어", ["영어"])) if _avg_in(r, ls) is not None]
+            parts = [f"{n} {_avg_in(r, ls):.0f}점" for n, ls in (("국어", K_LABELS), ("수학", M_LABELS), ("영어", ["영어"]), ("한국사", ["한국사"]))
+                     if _avg_in(r, ls) is not None]
             return f"{r['model']}(" + ", ".join(parts) + ")"
         out.append("- **국산 모델**: " + ", ".join(desc(r) for r in kr) + ".")
     return "\n".join(out) if out else "- 평가가 진행 중이다."
