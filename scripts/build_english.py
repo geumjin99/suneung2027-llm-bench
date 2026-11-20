@@ -54,6 +54,30 @@ def clean(text):
     return out
 
 
+ORDER_GRID_ABC = "(B)\n(A)\n(C)\n(A)\n(C)\n(B)\n①\n－\n－\n②\n－\n－\n(B)\n(C)\n(A)\n(C)\n(A)\n(B)\n③\n－\n－\n④\n－\n－\n(C)\n(B)\n(A)\n⑤\n－\n－"
+ORDER_GRID_BCD = "(C)\n(B)\n(D)\n(B)\n(D)\n(C)\n①\n－\n－\n②\n－\n－\n(C)\n(D)\n(B)\n(D)\n(B)\n(C)\n③\n－\n－\n④\n－\n－\n(D)\n(C)\n(B)\n⑤\n－\n－"
+# layout lost in text extraction (choice grids, boxed sentences, summary blanks); checked against the page images
+FIXES = [
+    (ORDER_GRID_ABC, "① (A) - (C) - (B)    ② (B) - (A) - (C)\n③ (B) - (C) - (A)    ④ (C) - (A) - (B)\n⑤ (C) - (B) - (A)"),
+    (ORDER_GRID_BCD, "① (B) - (D) - (C)    ② (C) - (B) - (D)\n③ (C) - (D) - (B)    ④ (D) - (B) - (C)\n⑤ (D) - (C) - (B)"),
+    ("the operator to\nhis or her\nchoice", "the operator to ________ his or her\nchoice"),  # 31-34: blanks are drawn rules
+    ("reality cannot\n.\nFor example", "reality cannot ________.\nFor example"),
+    ("there must\nbe\nwithin\neach", "there must\nbe ________ within\neach"),
+    ("form of\n,\ncomposition", "form of ________,\ncomposition"),
+    ("38.\nIt would be nice", "38.\n[주어진 문장]\nIt would be nice"),
+    ("wouldn’t be quite right either.\nThe need", "wouldn’t be quite right either.\n\n[글]\nThe need"),
+    ("39.\nAll these mechanisms", "39.\n[주어진 문장]\nAll these mechanisms"),
+    ("the best product or the cheapest price.\nTrends", "the best product or the cheapest price.\n\n[글]\nTrends"),
+    ("\U000f003b\n(A)\nToday’s advertising seeks to\nconsumers’ attitude\n(B)\nby promoting their expectations and\nof the\n"
+     "brand to encourage long-term consumption.\n(A)\n(B)\n(A)\n(B)\n①criticise……understandings ②cultivate\n……trials\n"
+     "③reflect ……valuations\n④manipulate……imitations\n⑤display ……campaigns",
+     "↓\n[요약문] Today’s advertising seeks to ____(A)____ consumers’ attitude by promoting their expectations and "
+     "____(B)____ of the brand to encourage long-term consumption.\n"
+     "(A) …… (B)\n① criticise …… understandings\n② cultivate …… trials\n③ reflect …… valuations\n"
+     "④ manipulate …… imitations\n⑤ display …… campaigns"),
+]
+
+
 def main():
     doc = fitz.open(EXAM)
     pages = {p: norm(column_text(doc[p - 1])) for p in range(1, 9)}
@@ -108,6 +132,7 @@ def main():
 
     key = english_key()
     items = []
+    used = set()
     for q in range(1, 46):
         ans, pts = key[q]
         if q <= 17:
@@ -115,8 +140,12 @@ def main():
                    f"[문제지]\n{block(q)}")
         else:
             ctx = block(q)
+            for a, b in FIXES:
+                if a in ctx:
+                    ctx = ctx.replace(a, b); used.add(a)
         items.append({"id": f"eng-all-{q:02d}", "subject": "english", "section": "listening" if q <= 17 else "reading",
                       "number": q, "type": "mcq", "points": pts, "answer": ans, "context": ctx})
+    assert len(used) == len(FIXES), [a[:40] for a, _ in FIXES if a not in used]
     json.dump(items, open("data/english.json", "w"), ensure_ascii=False, indent=1)
     print(len(items), "items; points", sum(i["points"] for i in items), "; script items", sorted(k for k in script if k <= 17))
 
