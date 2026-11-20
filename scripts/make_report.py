@@ -460,13 +460,13 @@ def summary(rows):
                        "2,000–4,000자 길이의 지문을 읽고 선택지 사이의 미묘한 차이를 가려내는 일이 작은 모델에게는 계산보다 어렵다.")
     kr = [r for r in rows if r["developer"] in ("네이버", "LG AI연구원", "카카오", "KT", "SKT")]
     if kr:
-        def f(v):
-            return f"{v:.0f}" if v is not None else "–"
-        def desc(r):
-            parts = [f"{n} {_avg_in(r, ls):.0f}점" for n, ls in (("국어", K_LABELS), ("수학", M_LABELS), ("영어", ["영어"]), ("한국사", ["한국사"]))
-                     if _avg_in(r, ls) is not None]
-            return f"{r['model']}(" + ", ".join(parts) + ")"
-        out.append("- **국산 모델**: " + ", ".join(desc(r) for r in kr) + ".")
+        f = lambda v: f"{v:.0f}" if v is not None else "–"
+        out.append(f"- **국산 모델 {len(kr)}종** 성적은 아래와 같다. 국어·수학은 선택과목 중 가장 높은 조합, 사회탐구는 5과목 평균이다.\n")
+        out.append("| 모델 | 개발사 | 국어 | 수학 | 영어 | 한국사 <sub>(50점)</sub> | 사회탐구 평균 <sub>(50점)</sub> |")
+        out.append("|---|---|---|---|---|---|---|")
+        for r in sorted(kr, key=lambda r: -(r["params_B"] or 0)):
+            out.append(f"| {r['model']} | {r['developer']} | {f(_best_in(r, K_LABELS))} | {f(_best_in(r, M_LABELS))} | "
+                       f"{f(_best_in(r, ['영어']))} | {f(r.get('한국사'))} | {f(_avg_in(r, SOCIAL_LABELS))} |")
     return "\n".join(out) if out else "- 평가가 진행 중이다."
 
 
