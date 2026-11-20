@@ -95,14 +95,22 @@ def main():
     if not todo:
         print("nothing to do"); return
     t0 = time.time()
-    from transformers import AutoConfig
-    cfg = AutoConfig.from_pretrained(a.model, trust_remote_code=True)
-    tc = getattr(cfg, "text_config", None) or cfg
-    native = getattr(tc, "max_position_embeddings", None) or a.max_model_len
+    # HyperCLOVA X THINK's config points to remote code that is not in the repo; vLLM supports it natively
+    remote = not is_hcx_think(a.model)
+    try:
+        from transformers import AutoConfig
+        cfg = AutoConfig.from_pretrained(a.model, trust_remote_code=remote)
+        tc = getattr(cfg, "text_config", None) or cfg
+        native = getattr(tc, "max_position_embeddings", None)
+    except Exception:
+        from huggingface_hub import hf_hub_download
+        c = json.load(open(hf_hub_download(a.model, "config.json")))
+        native = (c.get("text_config") or c).get("max_position_embeddings")
+    native = native or a.max_model_len
     a.max_model_len = int(min(a.max_model_len, native))
     print("max_model_len", a.max_model_len, flush=True)
     llm = LLM(model=a.model, max_model_len=a.max_model_len, gpu_memory_utilization=0.88,
-              trust_remote_code=True,
+              trust_remote_code=remote,
               limit_mm_per_prompt={"image": 0, "audio": 0} if ("gemma-4" in a.model or "Qwen3.5" in a.model) else None)
     load_s = time.time() - t0
     base = llm.get_default_sampling_params()  # honours the model's generation_config.json
