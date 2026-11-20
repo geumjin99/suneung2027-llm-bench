@@ -418,6 +418,18 @@ def summary(rows):
         else:
             txt += " 1등급 점수를 받은 모델은 없다."
         out.append(txt)
+    KR_DEVS = ("네이버", "LG AI연구원", "카카오", "KT", "SKT")
+    hk = [r for r in rows if r.get("한국사") is not None and r["developer"] in KR_DEVS]
+    hf = [r for r in rows if r.get("한국사") is not None and r["developer"] not in KR_DEVS]
+    if hk and hf:
+        bk, bf = max(hk, key=lambda r: r["한국사"]), max(hf, key=lambda r: r["한국사"])
+        if bk["한국사"] > bf["한국사"]:
+            top = sorted(hk + hf, key=lambda r: -r["한국사"])
+            n_kr_top = next((i for i, r in enumerate(top) if r["developer"] not in KR_DEVS), len(top))
+            out.append(f"- **한국사는 국산 모델이 앞섰다.** 상위 {n_kr_top}개가 모두 국산 모델이다"
+                       f"({', '.join(f'{r['model']} {r['한국사']:.0f}점' for r in top[:n_kr_top])}). "
+                       f"해외 모델 최고는 {bf['model']}의 {bf['한국사']:.0f}점이고, 국어·수학이 가장 높았던 Qwen 계열은 "
+                       f"{max(r['한국사'] for r in hf if r['developer'] == 'Alibaba'):.0f}점에 그쳤다. 한국 역사 지식에서는 모델 크기보다 한국어 자료를 얼마나 학습했는지가 더 크게 작용한 것으로 보인다.")
     sb = [(l, best([l])) for l in SOCIAL_LABELS if best([l])]
     if sb:
         out.append("- **사회탐구**(과목당 50점 만점) 과목별 최고 점수는 " +

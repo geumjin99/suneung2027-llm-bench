@@ -17,7 +17,7 @@ Qwen3.5-0.8B,history-15,2,4,5|2|3,0.0,8215
 Qwen3.5-0.8B,history-16,2,4,3|None|2,0.2,11191
 Qwen3.5-0.8B,history-17,3,3,5|None|3,1.2,9670
 Qwen3.5-0.8B,history-18,3,5,None|5|5,2.2,8974
-Qwen3.5-0.8B,history-19,2,3,5|5|2,0.0,8678
+Qwen3.5-0.8B,history-19,2,3,4|2|4,0.0,11331
 Qwen3.5-0.8B,history-20,3,3,5|3|4,1.0,9092
 Qwen3.5-0.8B,ethics-01,2,1,5|4|4,0.0,8928
 Qwen3.5-0.8B,ethics-02,2,2,None|1|1,0.2,11500
@@ -44,7 +44,7 @@ Qwen3.5-0.8B,thought-02,2,4,3|3|3,0.0,7283
 Qwen3.5-0.8B,thought-03,3,1,1|3|5,1.0,8136
 Qwen3.5-0.8B,thought-04,2,5,5|3|5,2.0,7681
 Qwen3.5-0.8B,thought-05,3,5,3|3|1,0.0,9806
-Qwen3.5-0.8B,thought-06,3,1,None|None|2,0.4,13150
+Qwen3.5-0.8B,thought-06,3,1,3|None|1,1.2,10808
 Qwen3.5-0.8B,thought-07,3,4,4|4|4,3.0,10953
 Qwen3.5-0.8B,thought-08,2,5,1|3|4,0.0,6788
 Qwen3.5-0.8B,thought-09,2,3,3|5|4,1.0,8344
@@ -102,13 +102,13 @@ Qwen3.5-0.8B,politics-20,3,5,4|None|None,0.4,14701
 Qwen3.5-0.8B,society-01,2,2,5|3|5,0.0,6618
 Qwen3.5-0.8B,society-02,3,1,2|3|2,0.0,8995
 Qwen3.5-0.8B,society-03,2,4,5|5|3,0.0,8513
-Qwen3.5-0.8B,society-04,3,3,1|1|None,0.3333333333333333,9094
+Qwen3.5-0.8B,society-04,3,3,1|1|1,0.0,8274
 Qwen3.5-0.8B,society-05,3,5,None|5|5,2.2,10278
 Qwen3.5-0.8B,society-06,2,1,4|None|4,0.2,12916
 Qwen3.5-0.8B,society-07,2,5,3|3|3,0.0,7282
 Qwen3.5-0.8B,society-08,3,3,5|None|5,0.2,12769
 Qwen3.5-0.8B,society-09,3,4,None|1|5,0.2,11700
-Qwen3.5-0.8B,society-10,2,4,1|1|None,0.2,13788
+Qwen3.5-0.8B,society-10,2,4,None|None|2,0.4,14210
 Qwen3.5-0.8B,society-11,2,4,4|4|4,3.0,4284
 Qwen3.5-0.8B,society-12,3,5,3|4|2,0.0,5537
 Qwen3.5-0.8B,society-13,2,2,3|3|3,0.0,12353
@@ -291,7 +291,7 @@ EXAONE-4.0-1.2B,thought-02,2,4,2|4|4,2.0,918
 EXAONE-4.0-1.2B,thought-03,3,1,5|5|5,0.0,1309
 EXAONE-4.0-1.2B,thought-04,2,5,4|1|None,0.2,1197
 EXAONE-4.0-1.2B,thought-05,3,5,3|3|1,0.0,597
-EXAONE-4.0-1.2B,thought-06,3,1,2|2|None,0.2,552
+EXAONE-4.0-1.2B,thought-06,3,1,2|4|2,0.0,577
 EXAONE-4.0-1.2B,thought-07,3,4,2|2|2,0.0,1776
 EXAONE-4.0-1.2B,thought-08,2,5,4|1|4,0.0,1250
 EXAONE-4.0-1.2B,thought-09,2,3,2|4|None,0.2,1102
@@ -349,13 +349,13 @@ EXAONE-4.0-1.2B,politics-20,3,5,4|3|1,0.0,6100
 EXAONE-4.0-1.2B,society-01,2,2,5|5|5,0.0,1471
 EXAONE-4.0-1.2B,society-02,3,1,1|1|None,2.2,1512
 EXAONE-4.0-1.2B,society-03,2,4,3|4|3,1.0,1178
-EXAONE-4.0-1.2B,society-04,3,3,1|1|1,0.0,1309
+EXAONE-4.0-1.2B,society-04,3,3,1|None|1,0.2,1067
 EXAONE-4.0-1.2B,society-05,3,5,2|3|3,0.0,2256
 EXAONE-4.0-1.2B,society-06,2,1,1|4|4,1.0,1073
 EXAONE-4.0-1.2B,society-07,2,5,3|3|5,1.0,792
 EXAONE-4.0-1.2B,society-08,3,3,3|1|5,1.0,1833
 EXAONE-4.0-1.2B,society-09,3,4,4|None|2,1.2,1711
-EXAONE-4.0-1.2B,society-10,2,4,5|2|4,1.0,4599
+EXAONE-4.0-1.2B,society-10,2,4,5|4|2,1.0,4439
 EXAONE-4.0-1.2B,society-11,2,4,4|4|4,3.0,779
 EXAONE-4.0-1.2B,society-12,3,5,5|5|4,2.0,646
 EXAONE-4.0-1.2B,society-13,2,2,3|3|3,0.0,2151
@@ -531,7 +531,7 @@ EXAONE-4.0-1.2B,history-15,2,4,4|3|4,2.0,1077
 EXAONE-4.0-1.2B,history-16,2,4,None|1|3,0.2,1357
 EXAONE-4.0-1.2B,history-17,3,3,5|5|5,0.0,670
 EXAONE-4.0-1.2B,history-18,3,5,5|5|5,3.0,1315
-EXAONE-4.0-1.2B,history-19,2,3,5|4|4,0.0,1365
+EXAONE-4.0-1.2B,history-19,2,3,4|2|4,0.0,584
 EXAONE-4.0-1.2B,history-20,3,3,3|5|3,2.0,955
 kanana-2-3B,kor-common-01,2,1,1|1|5,2.0,216
 kanana-2-3B,kor-common-02,2,4,3|4|4,2.0,146
@@ -614,7 +614,7 @@ kanana-2-3B,thought-02,2,4,1|1|1,0.0,164
 kanana-2-3B,thought-03,3,1,1|1|1,3.0,207
 kanana-2-3B,thought-04,2,5,1|4|1,0.0,285
 kanana-2-3B,thought-05,3,5,2|2|2,0.0,181
-kanana-2-3B,thought-06,3,1,2|3|1,1.0,196
+kanana-2-3B,thought-06,3,1,2|3|2,0.0,203
 kanana-2-3B,thought-07,3,4,4|4|1,2.0,319
 kanana-2-3B,thought-08,2,5,1|4|5,1.0,376
 kanana-2-3B,thought-09,2,3,4|2|4,0.0,260
@@ -672,13 +672,13 @@ kanana-2-3B,politics-20,3,5,1|5|5,2.0,420
 kanana-2-3B,society-01,2,2,1|3|3,0.0,427
 kanana-2-3B,society-02,3,1,1|2|1,2.0,250
 kanana-2-3B,society-03,2,4,3|1|3,0.0,304
-kanana-2-3B,society-04,3,3,5|5|2,0.0,224
+kanana-2-3B,society-04,3,3,1|4|4,0.0,206
 kanana-2-3B,society-05,3,5,5|5|3,2.0,222
 kanana-2-3B,society-06,2,1,1|5|4,1.0,89
 kanana-2-3B,society-07,2,5,3|3|3,0.0,97
 kanana-2-3B,society-08,3,3,4|3|4,1.0,274
 kanana-2-3B,society-09,3,4,4|1|4,2.0,97
-kanana-2-3B,society-10,2,4,None|2|1,0.2,464
+kanana-2-3B,society-10,2,4,1|4|1,1.0,483
 kanana-2-3B,society-11,2,4,4|4|4,3.0,122
 kanana-2-3B,society-12,3,5,3|3|3,0.0,157
 kanana-2-3B,society-13,2,2,3|3|1,0.0,232
@@ -752,7 +752,7 @@ kanana-2-3B,history-15,2,4,4|4|4,3.0,225
 kanana-2-3B,history-16,2,4,4|4|4,3.0,231
 kanana-2-3B,history-17,3,3,3|3|3,3.0,97
 kanana-2-3B,history-18,3,5,5|5|5,3.0,181
-kanana-2-3B,history-19,2,3,3|4|3,2.0,148
+kanana-2-3B,history-19,2,3,1|1|1,0.0,201
 kanana-2-3B,history-20,3,3,3|5|3,2.0,209
 kanana-2-3B,math-common-01,2,2,2|2|2,3.0,241
 kanana-2-3B,math-common-02,2,5,5|5|5,3.0,436
@@ -825,7 +825,7 @@ Qwen3-14B,thought-02,2,4,4|4|4,3.0,1659
 Qwen3-14B,thought-03,3,1,1|1|1,3.0,1137
 Qwen3-14B,thought-04,2,5,5|5|3,2.0,2819
 Qwen3-14B,thought-05,3,5,3|5|3,1.0,2930
-Qwen3-14B,thought-06,3,1,2|2|2,0.0,1344
+Qwen3-14B,thought-06,3,1,2|2|2,0.0,1542
 Qwen3-14B,thought-07,3,4,2|2|2,0.0,5623
 Qwen3-14B,thought-08,2,5,1|1|3,0.0,2975
 Qwen3-14B,thought-09,2,3,2|4|4,0.0,3507
@@ -883,13 +883,13 @@ Qwen3-14B,politics-20,3,5,2|3|4,0.0,12197
 Qwen3-14B,society-01,2,2,3|3|3,0.0,1581
 Qwen3-14B,society-02,3,1,1|1|1,3.0,557
 Qwen3-14B,society-03,2,4,4|4|4,3.0,1076
-Qwen3-14B,society-04,3,3,1|1|3,1.0,2898
+Qwen3-14B,society-04,3,3,3|1|1,1.0,3297
 Qwen3-14B,society-05,3,5,5|4|5,2.0,2775
 Qwen3-14B,society-06,2,1,1|1|1,3.0,770
 Qwen3-14B,society-07,2,5,3|5|3,1.0,1017
 Qwen3-14B,society-08,3,3,3|3|3,3.0,1359
 Qwen3-14B,society-09,3,4,5|5|4,1.0,2188
-Qwen3-14B,society-10,2,4,2|5|5,0.0,6476
+Qwen3-14B,society-10,2,4,4|4|4,3.0,6302
 Qwen3-14B,society-11,2,4,4|4|4,3.0,628
 Qwen3-14B,society-12,3,5,2|2|2,0.0,1510
 Qwen3-14B,society-13,2,2,3|4|3,0.0,3138
@@ -918,7 +918,7 @@ Qwen3-14B,history-15,2,4,2|2|1,0.0,1140
 Qwen3-14B,history-16,2,4,4|4|4,3.0,1255
 Qwen3-14B,history-17,3,3,5|3|3,2.0,1961
 Qwen3-14B,history-18,3,5,5|5|5,3.0,948
-Qwen3-14B,history-19,2,3,4|4|4,0.0,590
+Qwen3-14B,history-19,2,3,5|4|4,0.0,814
 Qwen3-14B,history-20,3,3,3|3|3,3.0,4121
 Qwen3-14B,kor-common-01,2,1,1|1|1,3.0,254
 Qwen3-14B,kor-common-02,2,4,4|4|4,3.0,448
@@ -1138,7 +1138,7 @@ Gemma-4-E4B,thought-02,2,4,4|4|3,2.0,2409
 Gemma-4-E4B,thought-03,3,1,1|1|1,3.0,1615
 Gemma-4-E4B,thought-04,2,5,3|5|5,2.0,1908
 Gemma-4-E4B,thought-05,3,5,3|3|3,0.0,1542
-Gemma-4-E4B,thought-06,3,1,2|4|2,0.0,1654
+Gemma-4-E4B,thought-06,3,1,2|4|2,0.0,1637
 Gemma-4-E4B,thought-07,3,4,5|4|1,1.0,3769
 Gemma-4-E4B,thought-08,2,5,4|5|3,1.0,2151
 Gemma-4-E4B,thought-09,2,3,4|4|3,1.0,1958
@@ -1196,13 +1196,13 @@ Gemma-4-E4B,politics-20,3,5,3|3|3,0.0,5839
 Gemma-4-E4B,society-01,2,2,3|5|3,0.0,1832
 Gemma-4-E4B,society-02,3,1,1|1|1,3.0,1360
 Gemma-4-E4B,society-03,2,4,4|4|4,3.0,1762
-Gemma-4-E4B,society-04,3,3,1|1|1,0.0,2016
+Gemma-4-E4B,society-04,3,3,1|1|3,1.0,2077
 Gemma-4-E4B,society-05,3,5,4|4|4,0.0,2364
 Gemma-4-E4B,society-06,2,1,5|1|1,2.0,1574
 Gemma-4-E4B,society-07,2,5,3|3|3,0.0,1214
 Gemma-4-E4B,society-08,3,3,3|4|4,1.0,2154
 Gemma-4-E4B,society-09,3,4,4|4|2,2.0,2400
-Gemma-4-E4B,society-10,2,4,1|2|5,0.0,5108
+Gemma-4-E4B,society-10,2,4,4|2|1,1.0,4388
 Gemma-4-E4B,society-11,2,4,4|4|4,3.0,1230
 Gemma-4-E4B,society-12,3,5,2|2|2,0.0,1335
 Gemma-4-E4B,society-13,2,2,2|3|3,1.0,2604
@@ -1332,7 +1332,7 @@ Gemma-4-E4B,history-15,2,4,4|4|4,3.0,1203
 Gemma-4-E4B,history-16,2,4,4|4|4,3.0,1578
 Gemma-4-E4B,history-17,3,3,3|3|3,3.0,1063
 Gemma-4-E4B,history-18,3,5,5|5|5,3.0,1255
-Gemma-4-E4B,history-19,2,3,4|4|3,1.0,1573
+Gemma-4-E4B,history-19,2,3,3|3|3,3.0,1644
 Gemma-4-E4B,history-20,3,3,3|3|3,3.0,1383
 A.X-4.0-Light,ethics-01,2,1,2|2|1,1.0,186
 A.X-4.0-Light,ethics-02,2,2,2|2|2,3.0,134
@@ -1359,7 +1359,7 @@ A.X-4.0-Light,thought-02,2,4,5|3|4,1.0,300
 A.X-4.0-Light,thought-03,3,1,1|1|1,3.0,269
 A.X-4.0-Light,thought-04,2,5,5|3|4,1.0,307
 A.X-4.0-Light,thought-05,3,5,3|2|2,0.0,248
-A.X-4.0-Light,thought-06,3,1,2|2|2,0.0,266
+A.X-4.0-Light,thought-06,3,1,2|2|2,0.0,280
 A.X-4.0-Light,thought-07,3,4,1|4|4,2.0,286
 A.X-4.0-Light,thought-08,2,5,1|3|1,0.0,283
 A.X-4.0-Light,thought-09,2,3,3|2|2,1.0,308
@@ -1417,13 +1417,13 @@ A.X-4.0-Light,politics-20,3,5,4|2|4,0.0,519
 A.X-4.0-Light,society-01,2,2,5|2|2,2.0,255
 A.X-4.0-Light,society-02,3,1,1|1|1,3.0,206
 A.X-4.0-Light,society-03,2,4,3|3|4,1.0,279
-A.X-4.0-Light,society-04,3,3,1|1|1,0.0,307
+A.X-4.0-Light,society-04,3,3,5|1|1,0.0,322
 A.X-4.0-Light,society-05,3,5,5|3|3,1.0,266
 A.X-4.0-Light,society-06,2,1,1|1|1,3.0,223
 A.X-4.0-Light,society-07,2,5,3|3|3,0.0,187
 A.X-4.0-Light,society-08,3,3,2|5|2,0.0,269
 A.X-4.0-Light,society-09,3,4,4|4|4,3.0,285
-A.X-4.0-Light,society-10,2,4,1|4|4,2.0,435
+A.X-4.0-Light,society-10,2,4,4|2|2,1.0,329
 A.X-4.0-Light,society-11,2,4,4|4|4,3.0,153
 A.X-4.0-Light,society-12,3,5,4|4|4,0.0,228
 A.X-4.0-Light,society-13,2,2,1|3|1,0.0,261
@@ -1599,7 +1599,7 @@ A.X-4.0-Light,history-15,2,4,5|4|4,2.0,215
 A.X-4.0-Light,history-16,2,4,4|4|4,3.0,241
 A.X-4.0-Light,history-17,3,3,3|3|3,3.0,196
 A.X-4.0-Light,history-18,3,5,5|4|5,2.0,248
-A.X-4.0-Light,history-19,2,3,4|4|1,0.0,220
+A.X-4.0-Light,history-19,2,3,4|4|3,1.0,203
 A.X-4.0-Light,history-20,3,3,3|3|3,3.0,291
 Gemma-4-E2B,ethics-01,2,1,1|1|1,3.0,1304
 Gemma-4-E2B,ethics-02,2,2,2|2|2,3.0,1111
@@ -1626,7 +1626,7 @@ Gemma-4-E2B,thought-02,2,4,4|5|4,2.0,1476
 Gemma-4-E2B,thought-03,3,1,5|5|1,1.0,1329
 Gemma-4-E2B,thought-04,2,5,3|3|3,0.0,1519
 Gemma-4-E2B,thought-05,3,5,3|3|3,0.0,1561
-Gemma-4-E2B,thought-06,3,1,4|4|4,0.0,1365
+Gemma-4-E2B,thought-06,3,1,2|2|2,0.0,1380
 Gemma-4-E2B,thought-07,3,4,4|5|5,1.0,2213
 Gemma-4-E2B,thought-08,2,5,4|4|4,0.0,1696
 Gemma-4-E2B,thought-09,2,3,4|4|4,0.0,1370
@@ -1684,13 +1684,13 @@ Gemma-4-E2B,politics-20,3,5,1|1|2,0.0,3532
 Gemma-4-E2B,society-01,2,2,3|3|3,0.0,1656
 Gemma-4-E2B,society-02,3,1,1|1|1,3.0,1335
 Gemma-4-E2B,society-03,2,4,4|4|4,3.0,2260
-Gemma-4-E2B,society-04,3,3,1|1|1,0.0,1485
+Gemma-4-E2B,society-04,3,3,1|1|1,0.0,1428
 Gemma-4-E2B,society-05,3,5,1|1|1,0.0,2223
 Gemma-4-E2B,society-06,2,1,1|1|4,2.0,1402
 Gemma-4-E2B,society-07,2,5,3|3|3,0.0,1027
 Gemma-4-E2B,society-08,3,3,5|3|4,1.0,2062
 Gemma-4-E2B,society-09,3,4,2|5|2,0.0,2086
-Gemma-4-E2B,society-10,2,4,3|5|2,0.0,2610
+Gemma-4-E2B,society-10,2,4,3|2|4,1.0,3101
 Gemma-4-E2B,society-11,2,4,4|4|4,3.0,981
 Gemma-4-E2B,society-12,3,5,2|2|2,0.0,1178
 Gemma-4-E2B,society-13,2,2,3|3|3,0.0,1266
@@ -1719,7 +1719,7 @@ Gemma-4-E2B,history-15,2,4,2|1|2,0.0,1212
 Gemma-4-E2B,history-16,2,4,1|4|4,2.0,1161
 Gemma-4-E2B,history-17,3,3,3|3|3,3.0,841
 Gemma-4-E2B,history-18,3,5,5|5|5,3.0,826
-Gemma-4-E2B,history-19,2,3,4|3|4,1.0,1351
+Gemma-4-E2B,history-19,2,3,5|3|4,1.0,1447
 Gemma-4-E2B,history-20,3,3,3|2|2,1.0,1187
 Gemma-4-E2B,math-common-01,2,2,2|2|2,3.0,1264
 Gemma-4-E2B,math-common-02,2,5,5|5|5,3.0,1460
@@ -1984,7 +1984,7 @@ Qwen3.5-9B,thought-02,2,4,4|4|4,3.0,7421
 Qwen3.5-9B,thought-03,3,1,1|1|1,3.0,8427
 Qwen3.5-9B,thought-04,2,5,5|5|5,3.0,7075
 Qwen3.5-9B,thought-05,3,5,3|5|5,2.0,9398
-Qwen3.5-9B,thought-06,3,1,2|2|2,0.0,7585
+Qwen3.5-9B,thought-06,3,1,2|2|2,0.0,8439
 Qwen3.5-9B,thought-07,3,4,2|4|4,2.0,13045
 Qwen3.5-9B,thought-08,2,5,3|1|None,0.2,12587
 Qwen3.5-9B,thought-09,2,3,4|4|2,0.0,10969
@@ -2042,13 +2042,13 @@ Qwen3.5-9B,politics-20,3,5,None|None|None,0.6000000000000001,16384
 Qwen3.5-9B,society-01,2,2,3|3|2,1.0,6660
 Qwen3.5-9B,society-02,3,1,1|1|1,3.0,6378
 Qwen3.5-9B,society-03,2,4,4|4|4,3.0,8235
-Qwen3.5-9B,society-04,3,3,1|1|1,0.0,6944
+Qwen3.5-9B,society-04,3,3,1|1|1,0.0,6867
 Qwen3.5-9B,society-05,3,5,5|2|None,1.2,14084
 Qwen3.5-9B,society-06,2,1,1|1|1,3.0,3831
 Qwen3.5-9B,society-07,2,5,3|3|3,0.0,3655
 Qwen3.5-9B,society-08,3,3,3|3|3,3.0,7157
 Qwen3.5-9B,society-09,3,4,4|4|4,3.0,9500
-Qwen3.5-9B,society-10,2,4,2|None|2,0.2,15707
+Qwen3.5-9B,society-10,2,4,None|2|2,0.2,11149
 Qwen3.5-9B,society-11,2,4,4|4|4,3.0,1742
 Qwen3.5-9B,society-12,3,5,None|2|2,0.2,9123
 Qwen3.5-9B,society-13,2,2,2|2|2,3.0,9744
@@ -2077,7 +2077,7 @@ Qwen3.5-9B,history-15,2,4,4|5|4,2.0,9979
 Qwen3.5-9B,history-16,2,4,4|4|4,3.0,6709
 Qwen3.5-9B,history-17,3,3,3|3|3,3.0,4330
 Qwen3.5-9B,history-18,3,5,5|5|5,3.0,7257
-Qwen3.5-9B,history-19,2,3,4|4|4,0.0,9080
+Qwen3.5-9B,history-19,2,3,3|3|3,3.0,7423
 Qwen3.5-9B,history-20,3,3,3|3|3,3.0,5256
 Qwen3.5-9B,kor-common-01,2,1,1|1|1,3.0,1931
 Qwen3.5-9B,kor-common-02,2,4,4|4|4,3.0,3377
@@ -2160,7 +2160,7 @@ Gemma-4-12B,thought-02,2,4,4|4|4,3.0,5896
 Gemma-4-12B,thought-03,3,1,1|1|1,3.0,1692
 Gemma-4-12B,thought-04,2,5,5|5|5,3.0,2636
 Gemma-4-12B,thought-05,3,5,5|5|5,3.0,2588
-Gemma-4-12B,thought-06,3,1,2|2|2,0.0,3884
+Gemma-4-12B,thought-06,3,1,2|2|2,0.0,5457
 Gemma-4-12B,thought-07,3,4,4|4|None,2.2,11443
 Gemma-4-12B,thought-08,2,5,1|1|1,0.0,3438
 Gemma-4-12B,thought-09,2,3,3|2|3,2.0,5926
@@ -2218,13 +2218,13 @@ Gemma-4-12B,politics-20,3,5,None|None|None,0.6000000000000001,16384
 Gemma-4-12B,society-01,2,2,3|3|2,1.0,7310
 Gemma-4-12B,society-02,3,1,1|1|1,3.0,1211
 Gemma-4-12B,society-03,2,4,4|4|4,3.0,2254
-Gemma-4-12B,society-04,3,3,1|1|1,0.0,5367
+Gemma-4-12B,society-04,3,3,1|1|1,0.0,4312
 Gemma-4-12B,society-05,3,5,5|5|5,3.0,6145
 Gemma-4-12B,society-06,2,1,1|1|1,3.0,1571
 Gemma-4-12B,society-07,2,5,5|3|5,2.0,1881
 Gemma-4-12B,society-08,3,3,3|3|None,2.2,6893
 Gemma-4-12B,society-09,3,4,4|4|4,3.0,8579
-Gemma-4-12B,society-10,2,4,None|None|None,0.6000000000000001,16384
+Gemma-4-12B,society-10,2,4,4|4|4,3.0,11841
 Gemma-4-12B,society-11,2,4,4|4|4,3.0,1102
 Gemma-4-12B,society-12,3,5,5|5|5,3.0,3344
 Gemma-4-12B,society-13,2,2,None|None|2,1.4,15115
@@ -2298,7 +2298,7 @@ Gemma-4-12B,history-15,2,4,4|4|4,3.0,1115
 Gemma-4-12B,history-16,2,4,4|4|4,3.0,1048
 Gemma-4-12B,history-17,3,3,3|3|3,3.0,853
 Gemma-4-12B,history-18,3,5,5|5|5,3.0,3877
-Gemma-4-12B,history-19,2,3,4|4|4,0.0,1815
+Gemma-4-12B,history-19,2,3,3|3|3,3.0,3958
 Gemma-4-12B,history-20,3,3,3|3|3,3.0,1026
 Gemma-4-12B,kor-common-01,2,1,1|1|1,3.0,1069
 Gemma-4-12B,kor-common-02,2,4,4|4|4,3.0,1049
@@ -2521,7 +2521,7 @@ kanana-1.5-8B,history-15,2,4,4|4|4,3.0,170
 kanana-1.5-8B,history-16,2,4,4|4|4,3.0,304
 kanana-1.5-8B,history-17,3,3,3|3|3,3.0,131
 kanana-1.5-8B,history-18,3,5,5|5|5,3.0,338
-kanana-1.5-8B,history-19,2,3,4|4|4,0.0,222
+kanana-1.5-8B,history-19,2,3,3|3|3,3.0,319
 kanana-1.5-8B,history-20,3,3,3|3|3,3.0,176
 kanana-1.5-8B,math-common-01,2,2,2|2|2,3.0,156
 kanana-1.5-8B,math-common-02,2,5,5|5|5,3.0,844
@@ -2594,7 +2594,7 @@ kanana-1.5-8B,thought-02,2,4,4|4|4,3.0,331
 kanana-1.5-8B,thought-03,3,1,5|1|1,2.0,395
 kanana-1.5-8B,thought-04,2,5,3|1|3,0.0,369
 kanana-1.5-8B,thought-05,3,5,5|5|5,3.0,295
-kanana-1.5-8B,thought-06,3,1,3|2|1,1.0,325
+kanana-1.5-8B,thought-06,3,1,1|2|3,1.0,447
 kanana-1.5-8B,thought-07,3,4,4|1|4,2.0,524
 kanana-1.5-8B,thought-08,2,5,1|1|1,0.0,168
 kanana-1.5-8B,thought-09,2,3,1|3|4,1.0,351
@@ -2652,13 +2652,13 @@ kanana-1.5-8B,politics-20,3,5,3|4|2,0.0,741
 kanana-1.5-8B,society-01,2,2,5|3|3,0.0,440
 kanana-1.5-8B,society-02,3,1,1|1|1,3.0,226
 kanana-1.5-8B,society-03,2,4,4|5|4,2.0,314
-kanana-1.5-8B,society-04,3,3,4|2|1,0.0,506
+kanana-1.5-8B,society-04,3,3,3|1|1,1.0,428
 kanana-1.5-8B,society-05,3,5,3|3|4,0.0,495
 kanana-1.5-8B,society-06,2,1,1|1|1,3.0,301
 kanana-1.5-8B,society-07,2,5,3|3|3,0.0,121
 kanana-1.5-8B,society-08,3,3,5|3|5,1.0,474
 kanana-1.5-8B,society-09,3,4,2|5|4,1.0,511
-kanana-1.5-8B,society-10,2,4,1|1|1,0.0,710
+kanana-1.5-8B,society-10,2,4,4|1|1,1.0,727
 kanana-1.5-8B,society-11,2,4,4|4|4,3.0,192
 kanana-1.5-8B,society-12,3,5,2|2|2,0.0,180
 kanana-1.5-8B,society-13,2,2,1|1|1,0.0,598
@@ -2739,7 +2739,7 @@ HyperCLOVAX-SEED 0.5B,thought-02,2,4,None|5|None,0.2,216
 HyperCLOVAX-SEED 0.5B,thought-03,3,1,4|1|1,2.0,175
 HyperCLOVAX-SEED 0.5B,thought-04,2,5,5|5|2,2.0,217
 HyperCLOVAX-SEED 0.5B,thought-05,3,5,5|None|4,1.2,278
-HyperCLOVAX-SEED 0.5B,thought-06,3,1,None|None|4,0.4,132
+HyperCLOVAX-SEED 0.5B,thought-06,3,1,None|5|4,0.2,214
 HyperCLOVAX-SEED 0.5B,thought-07,3,4,4|None|None,1.4,2724
 HyperCLOVAX-SEED 0.5B,thought-08,2,5,2|3|1,0.0,282
 HyperCLOVAX-SEED 0.5B,thought-09,2,3,4|4|None,0.2,240
@@ -2797,13 +2797,13 @@ HyperCLOVAX-SEED 0.5B,politics-20,3,5,None|None|None,0.6000000000000001,350
 HyperCLOVAX-SEED 0.5B,society-01,2,2,3|5|3,0.0,385
 HyperCLOVAX-SEED 0.5B,society-02,3,1,1|None|None,1.4,225
 HyperCLOVAX-SEED 0.5B,society-03,2,4,4|2|4,2.0,321
-HyperCLOVAX-SEED 0.5B,society-04,3,3,4|5|2,0.0,262
+HyperCLOVAX-SEED 0.5B,society-04,3,3,5|None|5,0.2,252
 HyperCLOVAX-SEED 0.5B,society-05,3,5,2|2|2,0.0,208
 HyperCLOVAX-SEED 0.5B,society-06,2,1,5|2|5,0.0,214
 HyperCLOVAX-SEED 0.5B,society-07,2,5,3|3|3,0.0,103
 HyperCLOVAX-SEED 0.5B,society-08,3,3,1|None|None,0.4,186
 HyperCLOVAX-SEED 0.5B,society-09,3,4,None|5|3,0.2,353
-HyperCLOVAX-SEED 0.5B,society-10,2,4,5|5|None,0.2,232
+HyperCLOVAX-SEED 0.5B,society-10,2,4,1|1|5,0.0,575
 HyperCLOVAX-SEED 0.5B,society-11,2,4,3|4|None,1.2,234
 HyperCLOVAX-SEED 0.5B,society-12,3,5,3|2|3,0.0,192
 HyperCLOVAX-SEED 0.5B,society-13,2,2,3|2|None,1.2,258
@@ -2832,7 +2832,7 @@ HyperCLOVAX-SEED 0.5B,history-15,2,4,None|5|2,0.2,1914
 HyperCLOVAX-SEED 0.5B,history-16,2,4,None|4|None,1.4,124
 HyperCLOVAX-SEED 0.5B,history-17,3,3,5|5|None,0.2,136
 HyperCLOVAX-SEED 0.5B,history-18,3,5,None|5|2,1.2,236
-HyperCLOVAX-SEED 0.5B,history-19,2,3,5|2|4,0.0,290
+HyperCLOVAX-SEED 0.5B,history-19,2,3,2|4|1,0.0,497
 HyperCLOVAX-SEED 0.5B,history-20,3,3,None|4|5,0.2,107
 HyperCLOVAX-SEED 0.5B,math-common-01,2,2,2|None|1,1.2,2948
 HyperCLOVAX-SEED 0.5B,math-common-02,2,5,None|4|2,0.2,426
@@ -2954,7 +2954,7 @@ Mi:dm-2.0-Base,history-15,2,4,4|4|4,3.0,235
 Mi:dm-2.0-Base,history-16,2,4,4|4|4,3.0,273
 Mi:dm-2.0-Base,history-17,3,3,3|3|3,3.0,226
 Mi:dm-2.0-Base,history-18,3,5,5|4|5,2.0,254
-Mi:dm-2.0-Base,history-19,2,3,4|4|4,0.0,279
+Mi:dm-2.0-Base,history-19,2,3,3|3|3,3.0,235
 Mi:dm-2.0-Base,history-20,3,3,3|3|3,3.0,256
 Mi:dm-2.0-Base,ethics-01,2,1,1|1|1,3.0,310
 Mi:dm-2.0-Base,ethics-02,2,2,2|2|2,3.0,162
@@ -2981,7 +2981,7 @@ Mi:dm-2.0-Base,thought-02,2,4,3|5|3,0.0,364
 Mi:dm-2.0-Base,thought-03,3,1,1|1|1,3.0,366
 Mi:dm-2.0-Base,thought-04,2,5,5|5|5,3.0,397
 Mi:dm-2.0-Base,thought-05,3,5,2|2|3,0.0,409
-Mi:dm-2.0-Base,thought-06,3,1,2|2|2,0.0,263
+Mi:dm-2.0-Base,thought-06,3,1,2|2|2,0.0,289
 Mi:dm-2.0-Base,thought-07,3,4,2|2|4,1.0,457
 Mi:dm-2.0-Base,thought-08,2,5,3|5|1,1.0,424
 Mi:dm-2.0-Base,thought-09,2,3,3|3|3,3.0,296
@@ -3039,13 +3039,13 @@ Mi:dm-2.0-Base,politics-20,3,5,5|4|4,1.0,648
 Mi:dm-2.0-Base,society-01,2,2,3|5|5,0.0,343
 Mi:dm-2.0-Base,society-02,3,1,1|1|1,3.0,303
 Mi:dm-2.0-Base,society-03,2,4,2|5|2,0.0,332
-Mi:dm-2.0-Base,society-04,3,3,4|5|3,1.0,362
+Mi:dm-2.0-Base,society-04,3,3,1|1|1,0.0,374
 Mi:dm-2.0-Base,society-05,3,5,3|3|5,1.0,394
 Mi:dm-2.0-Base,society-06,2,1,1|1|1,3.0,311
 Mi:dm-2.0-Base,society-07,2,5,3|3|3,0.0,226
 Mi:dm-2.0-Base,society-08,3,3,5|3|4,1.0,302
 Mi:dm-2.0-Base,society-09,3,4,5|4|4,2.0,379
-Mi:dm-2.0-Base,society-10,2,4,3|5|4,1.0,449
+Mi:dm-2.0-Base,society-10,2,4,3|1|2,0.0,530
 Mi:dm-2.0-Base,society-11,2,4,4|4|4,3.0,237
 Mi:dm-2.0-Base,society-12,3,5,2|3|5,1.0,257
 Mi:dm-2.0-Base,society-13,2,2,5|5|3,0.0,329
@@ -3266,7 +3266,7 @@ HyperCLOVAX-SEED-Think-14B,history-15,2,4,4|5|4,2.0,3697
 HyperCLOVAX-SEED-Think-14B,history-16,2,4,4|4|4,3.0,1309
 HyperCLOVAX-SEED-Think-14B,history-17,3,3,3|3|3,3.0,788
 HyperCLOVAX-SEED-Think-14B,history-18,3,5,5|5|5,3.0,1024
-HyperCLOVAX-SEED-Think-14B,history-19,2,3,4|4|4,0.0,9029
+HyperCLOVAX-SEED-Think-14B,history-19,2,3,3|3|4,2.0,9127
 HyperCLOVAX-SEED-Think-14B,history-20,3,3,3|3|3,3.0,1276
 HyperCLOVAX-SEED-Think-14B,ethics-01,2,1,1|1|1,3.0,9087
 HyperCLOVAX-SEED-Think-14B,ethics-02,2,2,2|2|2,3.0,659
@@ -3293,7 +3293,7 @@ HyperCLOVAX-SEED-Think-14B,thought-02,2,4,4|4|4,3.0,5083
 HyperCLOVAX-SEED-Think-14B,thought-03,3,1,1|1|1,3.0,2241
 HyperCLOVAX-SEED-Think-14B,thought-04,2,5,5|3|5,2.0,6559
 HyperCLOVAX-SEED-Think-14B,thought-05,3,5,5|5|5,3.0,3592
-HyperCLOVAX-SEED-Think-14B,thought-06,3,1,2|2|1,1.0,3019
+HyperCLOVAX-SEED-Think-14B,thought-06,3,1,5|5|5,0.0,2095
 HyperCLOVAX-SEED-Think-14B,thought-07,3,4,4|4|4,3.0,10137
 HyperCLOVAX-SEED-Think-14B,thought-08,2,5,3|2|2,0.0,10235
 HyperCLOVAX-SEED-Think-14B,thought-09,2,3,3|3|3,3.0,6825
@@ -3351,13 +3351,13 @@ HyperCLOVAX-SEED-Think-14B,politics-20,3,5,4|1|1,0.0,12838
 HyperCLOVAX-SEED-Think-14B,society-01,2,2,2|3|3,1.0,5322
 HyperCLOVAX-SEED-Think-14B,society-02,3,1,1|1|1,3.0,4118
 HyperCLOVAX-SEED-Think-14B,society-03,2,4,4|4|4,3.0,7360
-HyperCLOVAX-SEED-Think-14B,society-04,3,3,1|1|1,0.0,8356
+HyperCLOVAX-SEED-Think-14B,society-04,3,3,1|1|1,0.0,9444
 HyperCLOVAX-SEED-Think-14B,society-05,3,5,4|5|5,2.0,8786
 HyperCLOVAX-SEED-Think-14B,society-06,2,1,1|1|1,3.0,6531
 HyperCLOVAX-SEED-Think-14B,society-07,2,5,5|5|5,3.0,3766
 HyperCLOVAX-SEED-Think-14B,society-08,3,3,3|3|5,2.0,8927
 HyperCLOVAX-SEED-Think-14B,society-09,3,4,4|4|4,3.0,7180
-HyperCLOVAX-SEED-Think-14B,society-10,2,4,2|5|5,0.0,8730
+HyperCLOVAX-SEED-Think-14B,society-10,2,4,4|4|1,2.0,8710
 HyperCLOVAX-SEED-Think-14B,society-11,2,4,4|4|4,3.0,888
 HyperCLOVAX-SEED-Think-14B,society-12,3,5,5|5|5,3.0,4362
 HyperCLOVAX-SEED-Think-14B,society-13,2,2,2|2|2,3.0,8941
@@ -3551,7 +3551,7 @@ Qwen3.5-4B,thought-02,2,4,4|4|4,3.0,8989
 Qwen3.5-4B,thought-03,3,1,1|1|1,3.0,8413
 Qwen3.5-4B,thought-04,2,5,4|3|3,0.0,10818
 Qwen3.5-4B,thought-05,3,5,3|3|3,0.0,7854
-Qwen3.5-4B,thought-06,3,1,2|2|4,0.0,8380
+Qwen3.5-4B,thought-06,3,1,2|2|2,0.0,7769
 Qwen3.5-4B,thought-07,3,4,None|4|None,1.4,15654
 Qwen3.5-4B,thought-08,2,5,1|1|1,0.0,11197
 Qwen3.5-4B,thought-09,2,3,3|3|2,2.0,10903
@@ -3609,13 +3609,13 @@ Qwen3.5-4B,politics-20,3,5,5|None|None,1.4,16141
 Qwen3.5-4B,society-01,2,2,2|2|2,3.0,9409
 Qwen3.5-4B,society-02,3,1,1|1|1,3.0,5172
 Qwen3.5-4B,society-03,2,4,4|4|4,3.0,9758
-Qwen3.5-4B,society-04,3,3,1|1|1,0.0,4833
+Qwen3.5-4B,society-04,3,3,1|1|1,0.0,5224
 Qwen3.5-4B,society-05,3,5,5|3|5,2.0,11265
 Qwen3.5-4B,society-06,2,1,1|1|1,3.0,4461
 Qwen3.5-4B,society-07,2,5,3|3|3,0.0,5573
 Qwen3.5-4B,society-08,3,3,4|3|3,2.0,6697
 Qwen3.5-4B,society-09,3,4,3|4|5,1.0,12642
-Qwen3.5-4B,society-10,2,4,2|2|5,0.0,12285
+Qwen3.5-4B,society-10,2,4,None|2|2,0.2,12459
 Qwen3.5-4B,society-11,2,4,4|4|4,3.0,2779
 Qwen3.5-4B,society-12,3,5,2|5|2,1.0,6625
 Qwen3.5-4B,society-13,2,2,2|3|2,2.0,8646
@@ -3690,7 +3690,7 @@ Qwen3.5-4B,history-15,2,4,3|4|5,1.0,8832
 Qwen3.5-4B,history-16,2,4,1|4|4,2.0,7448
 Qwen3.5-4B,history-17,3,3,3|3|3,3.0,7643
 Qwen3.5-4B,history-18,3,5,2|5|5,2.0,8195
-Qwen3.5-4B,history-19,2,3,3|3|5,2.0,8558
+Qwen3.5-4B,history-19,2,3,3|3|4,2.0,11746
 Qwen3.5-4B,history-20,3,3,4|3|3,2.0,8012
 Qwen3.5-4B,eng-all-01,2,3,3|3|3,3.0,1227
 Qwen3.5-4B,eng-all-02,2,1,1|1|1,3.0,1613
@@ -3762,7 +3762,7 @@ Qwen3.5-2B,thought-02,2,4,5|5|5,0.0,7898
 Qwen3.5-2B,thought-03,3,1,5|5|5,0.0,6156
 Qwen3.5-2B,thought-04,2,5,5|5|5,3.0,7008
 Qwen3.5-2B,thought-05,3,5,5|2|5,2.0,10321
-Qwen3.5-2B,thought-06,3,1,2|4|2,0.0,6699
+Qwen3.5-2B,thought-06,3,1,2|5|5,0.0,6871
 Qwen3.5-2B,thought-07,3,4,4|4|5,2.0,13548
 Qwen3.5-2B,thought-08,2,5,5|5|4,2.0,11321
 Qwen3.5-2B,thought-09,2,3,4|5|4,0.0,8531
@@ -3820,13 +3820,13 @@ Qwen3.5-2B,politics-20,3,5,2|None|None,0.4,16319
 Qwen3.5-2B,society-01,2,2,3|4|5,0.0,10054
 Qwen3.5-2B,society-02,3,1,1|1|1,3.0,6711
 Qwen3.5-2B,society-03,2,4,5|1|5,0.0,14708
-Qwen3.5-2B,society-04,3,3,1|3|1,1.0,7083
+Qwen3.5-2B,society-04,3,3,1|1|1,0.0,10511
 Qwen3.5-2B,society-05,3,5,5|5|None,2.2,14824
 Qwen3.5-2B,society-06,2,1,5|1|None,1.2,11486
 Qwen3.5-2B,society-07,2,5,3|3|3,0.0,4868
 Qwen3.5-2B,society-08,3,3,None|1|3,1.2,10210
 Qwen3.5-2B,society-09,3,4,5|5|5,0.0,10915
-Qwen3.5-2B,society-10,2,4,None|5|None,0.4,10599
+Qwen3.5-2B,society-10,2,4,4|None|None,1.4,15542
 Qwen3.5-2B,society-11,2,4,4|4|4,3.0,3757
 Qwen3.5-2B,society-12,3,5,5|5|5,3.0,7825
 Qwen3.5-2B,society-13,2,2,5|3|5,0.0,12978
@@ -4002,5 +4002,5 @@ Qwen3.5-2B,history-15,2,4,2|5|None,0.2,10315
 Qwen3.5-2B,history-16,2,4,4|2|1,1.0,7888
 Qwen3.5-2B,history-17,3,3,5|5|3,1.0,7361
 Qwen3.5-2B,history-18,3,5,None|5|5,2.2,9733
-Qwen3.5-2B,history-19,2,3,5|None|5,0.2,13400
+Qwen3.5-2B,history-19,2,3,2|5|4,0.0,9040
 Qwen3.5-2B,history-20,3,3,4|3|None,1.2,12600
