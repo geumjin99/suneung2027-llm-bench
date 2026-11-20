@@ -65,6 +65,23 @@ def extract(text, typ, finish=None):
     return v
 
 
+def is_hcx_think(model):
+    return "HyperCLOVAX-SEED-Think" in model
+
+
+def template_kwargs(model):
+    # HyperCLOVA X THINK turns reasoning on with its own switch
+    return {"enable_thinking": True, "force_reasoning": True} if is_hcx_think(model) else {"enable_thinking": True}
+
+
+def normalize_output(model, text):
+    """HyperCLOVA X THINK ends reasoning with '<|im_end|><|im_start|>assistant'; map that to '</think>'."""
+    if not is_hcx_think(model):
+        return text
+    text = re.sub(r"<\|im_end\|>\s*<\|im_start\|>assistant\s*", "\n</think>\n", text, count=1)
+    return re.sub(r"<\|[a-z_/]+\|>", "", text)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("model"); ap.add_argument("items", help="comma-separated item files"); ap.add_argument("out")
@@ -93,6 +110,9 @@ def main():
                         temperature=base.temperature if base.temperature is not None else 0.7,
                         top_p=base.top_p if base.top_p is not None else 0.95,
                         top_k=base.top_k if base.top_k is not None else -1)
+    if is_hcx_think(a.model):  # keep the turn switch in the text, stop at the model's end-of-turn markers
+        sp.stop = ["<|endofturn|>", "<|stop|>"]
+        sp.skip_special_tokens = False
     for f in todo:
         run_one(llm, sp, a, f, tag, load_s)
 
@@ -114,20 +134,21 @@ def run_one(llm, sp, a, path, tag, load_s):
             q = sp.clone(); q.max_tokens = cap; out.append(q)
         return out
     try:
-        outs = llm.chat(msgs, per_item_sp(msgs), chat_template_kwargs={"enable_thinking": True})
+        outs = llm.chat(msgs, per_item_sp(msgs), chat_template_kwargs=template_kwargs(a.model))
     except Exception as e:  # templates without system role support
         print("retry without system role:", repr(e)[:300], flush=True)
         msgs = [[{"role": "user", "content": SYSTEM + "\n\n" + build_prompt(it)}] for it in items]
-        outs = llm.chat(msgs, per_item_sp(msgs), chat_template_kwargs={"enable_thinking": True})
+        outs = llm.chat(msgs, per_item_sp(msgs), chat_template_kwargs=template_kwargs(a.model))
     gen_s = time.time() - t1
     recs, ntok = [], 0
     for it, o in zip(items, outs):
         samples = []
         for c in o.outputs:
-            pred = extract(c.text, it["type"], c.finish_reason)
+            text = normalize_output(a.model, c.text)
+            pred = extract(text, it["type"], c.finish_reason)
             ntok += len(c.token_ids)
             samples.append({"pred": pred, "correct": pred == it["answer"], "tokens": len(c.token_ids),
-                            "finish": c.finish_reason, "text": c.text})
+                            "finish": c.finish_reason, "text": text})
         recs.append({"id": it["id"], "subject": it["subject"], "section": it["section"], "number": it["number"],
                      "points": it["points"], "answer": it["answer"], "samples": samples})
     meta = {"model": a.model, "n": a.n, "max_tokens": a.max_tokens, "temperature": sp.temperature, "top_p": sp.top_p,

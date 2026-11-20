@@ -26,9 +26,12 @@ MODELS = {
     "kakaocorp/kanana-2-3b-instruct": ("kanana-2-3B", 3.0, "카카오"),
     "Qwen/Qwen3.5-4B": ("Qwen3.5-4B", 4.0, "Alibaba"),
     "google/gemma-4-E4B-it": ("Gemma-4-E4B", 4.0, "Google"),
+    "skt/A.X-4.0-Light": ("A.X-4.0-Light", 7.3, "SKT"),
     "kakaocorp/kanana-1.5-8b-instruct-2505": ("kanana-1.5-8B", 8.0, "카카오"),
     "Qwen/Qwen3.5-9B": ("Qwen3.5-9B", 9.0, "Alibaba"),
+    "K-intelligence/Midm-2.0-Base-Instruct": ("Mi:dm-2.0-Base", 11.5, "KT"),
     "google/gemma-4-12B-it": ("Gemma-4-12B", 12.0, "Google"),
+    "naver-hyperclovax/HyperCLOVAX-SEED-Think-14B": ("HyperCLOVAX-SEED-Think-14B", 14.7, "네이버"),
     "Qwen/Qwen3-14B": ("Qwen3-14B", 14.8, "Alibaba"),
 }
 # Approximate memory for 4-bit quantized weights (GB) and the device class that can hold it.
@@ -38,6 +41,8 @@ MEM_4BIT = {
     "LGAI-EXAONE/EXAONE-4.0-1.2B": 0.8, "Qwen/Qwen3.5-2B": 1.4, "google/gemma-4-E2B-it": 2.0,
     "kakaocorp/kanana-2-3b-instruct": 2.0, "Qwen/Qwen3.5-4B": 2.6, "google/gemma-4-E4B-it": 3.0,
     "kakaocorp/kanana-1.5-8b-instruct-2505": 4.8, "Qwen/Qwen3.5-9B": 5.5, "google/gemma-4-12B-it": 7.5,
+    "skt/A.X-4.0-Light": 4.4, "K-intelligence/Midm-2.0-Base-Instruct": 6.9,
+    "naver-hyperclovax/HyperCLOVAX-SEED-Think-14B": 8.8,
     "Qwen/Qwen3-14B": 8.8,
 }
 DEVICE_TIERS = [  # (max GB for weights, label)
